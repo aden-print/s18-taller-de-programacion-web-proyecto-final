@@ -51,9 +51,6 @@ textarea {
   resize: none;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-}
 
 button {
   background-color: #333;
