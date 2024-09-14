@@ -1,3 +1,5 @@
+@import url("header.css");
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -9,7 +11,6 @@ h1,
 h2 {
   font-size: 40px;
 }
-header,
 footer {
   background-color: rgba(49, 48, 48, 0.788);
   color: white;

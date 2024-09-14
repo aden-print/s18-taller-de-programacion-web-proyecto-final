@@ -1,3 +1,5 @@
+@import url("header.css");
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -6,16 +8,21 @@ body {
   background-color: #f4f4f4;
 }
 
-@import url("header.css");
-
 main {
-  max-width: 700px;
+  max-width: 120vh;
+  width: 80%;
   margin: 30px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(22, 17, 17, 0.1);
 }
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
 /* Estilos del formulario */
 .form-group {
   margin-bottom: 20px;
@@ -32,7 +39,7 @@ input[type="date"],
 input[type="tel"],
 select,
 textarea {
-  width: 80%;
+  width: 95%;
   padding: 10px;
   border: 1px solid black;
   border-radius: 4px;
