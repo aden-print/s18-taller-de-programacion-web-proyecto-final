@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 10px;
+  margin: 0;
+  padding: 0;
   background-color: #f4f4f4;
 }
 header,
@@ -32,13 +33,18 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="date"],
+input[type="tel"],
 select,
 textarea {
   width: 80%;
-  padding: 17px;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 4px;
   font-size: 16px;
+}
+
+textarea {
+  resize: none;
 }
 
 input[type="checkbox"] {
@@ -47,9 +53,10 @@ input[type="checkbox"] {
 
 button {
   background-color: #333;
+  width: min(110px, 100%);
   color: #fff;
   padding: 20px 20px;
-  border: red;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
