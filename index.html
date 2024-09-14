@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novedades Isidora</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Novedades Isidora</h1>
-
-      <img src="img/logo.png" alt="logo">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
-        dicta atque! Nihil debitis quam voluptatem, aliquam corrupti aut numquam
-        rerum commodi laboriosam deleniti, quod sint eaque, nam suscipit nulla
-        recusandae.
-      </p>
-    </header>
-
-    <footer>
-      <p>todos los derechos para angel</p>
-    </footer>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="formulario">
+        <h1>INICIAR SECION</h1>
+        <form id="loginForm">
+          <div>
+              <label for="USUARIO">Correo electronico</label>
+              <input type="email" name="email" id="email" required>
+          </div>
+          <div>
+              <label for="CONTRASEÑA">Contraseña</label>
+              <input type="password" name="password" id="password" required>
+          </div>
+          <div>
+              <label for="olvido">Has olvidado tu contraseña?</label>
+              <label for="crear"> Crear cuenta</label>
+          </div>
+          <div>
+              <button type="submit">
+                  Iniciar Sesión
+              </button>
+          </div>
+      </form>
+    </div>
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', (event) => {
+        // Evita el envío del formulario  
+        event.preventDefault(); 
+        // Redirige a home.html
+        window.location.href = 'pages/home.html'; 
+      });
+  </script>
+</body>
 </html>

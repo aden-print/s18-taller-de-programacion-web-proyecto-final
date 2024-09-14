@@ -5,13 +5,9 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-header,
-footer {
-  background-color: rgba(49, 48, 48, 0.788);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+
+@import url("header.css");
+
 main {
   max-width: 700px;
   margin: 30px auto;
@@ -64,4 +60,11 @@ button {
 
 button:hover {
   background-color: #555;
+}
+
+footer {
+  background-color: rgba(49, 48, 48, 0.788);
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
