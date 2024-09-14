@@ -1,4 +1,5 @@
 @import url("header.css");
+@import url("footer.css");
 
 body {
   font-family: Arial, sans-serif;
@@ -67,11 +68,4 @@ button {
 
 button:hover {
   background-color: #555;
-}
-
-footer {
-  background-color: rgba(49, 48, 48, 0.788);
-  color: white;
-  text-align: center;
-  padding: 1rem;
 }
