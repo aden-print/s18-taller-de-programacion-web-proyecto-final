@@ -51,7 +51,6 @@ textarea {
   resize: none;
 }
 
-
 button {
   background-color: #333;
   width: min(110px, 100%);
@@ -64,5 +63,5 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #04792b;
 }
