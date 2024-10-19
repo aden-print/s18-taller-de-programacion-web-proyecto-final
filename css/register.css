@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: sans-serif;
+  font-family: sans-serif;
 }
 
 body {
@@ -11,6 +11,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: rgb(77, 77, 77);
+  padding: 1rem;
 }
 
 form {
@@ -18,27 +19,27 @@ form {
   flex-direction: column;
   text-align: center;
   background-color: white;
-  padding: 30px 35px;
-  border-radius: 10px;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 form .titulo {
-  margin-bottom: 20px;
-  font-size: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 label,
 input {
-  margin: 10px 0;
+  margin: 1rem 0;
   width: 100%;
-  font-size: 20px;
-  margin-bottom: 35px;
+  font-size: 1.25rem;
 }
 
 input {
-  padding: 10px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .links {
@@ -49,15 +50,15 @@ input {
 .link {
   text-decoration: none;
   color: black;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 1rem 1rem;
+  font-size: 1.25rem;
   background-color: #000000;
   color: white;
   cursor: pointer;
   border: none;
-  border-radius: 5px;
+  border-radius: 1rem;
 }
