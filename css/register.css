@@ -67,7 +67,7 @@ button {
 }
 
 .icons {
-  margin-bottom: 35px;
+  margin: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
