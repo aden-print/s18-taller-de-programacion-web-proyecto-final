@@ -6,87 +6,167 @@
     <link rel="stylesheet" href="../css/contacto.css" />
     <title>Novedades Isidora - Contacto</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="preconnect" href="ubicacion.html">
-    <link rel="shortcut icon" href="../img/logo-isidora.png" type="image/x-icon">
-    <script  type = "module"  src = " https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js " > </script> 
+    <link rel="preconnect" href="ubicacion.html" />
+    <link
+      rel="shortcut icon"
+      href="../img/logo-isidora.png"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "
+    ></script>
   </head>
   <body>
     <header>
       <a href="../index.html">
-        <img src="../img/logo.png" alt="Imagen de la tienda">
+        <img src="../img/logo.png" alt="Imagen de la tienda" />
       </a>
-      <nav >
-          <ul >
-              <li><a href="../index.html">Inicio</a></li>
-              <li><a href="tipo-calzado.html">Tipos de Calzado</a></li>
-              <li><a href="catalogo-talla.html">Catálogo por Tallas</a></li>
-              <li><a href="liquidacion.html">Liquidación</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
-              <li><a href="ubicacion.html">Ubicación</a></li>
-              <li><a href="login.html">Iniciar Sesión</a></li>
-              <li><a href="register.html">Registrarse</a></li>
-              <!-- <li><a href="../index.html">Cerrar Sesión</a></li> -->
-          </ul>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="tipo-calzado.html">Tipos de Calzado</a></li>
+          <li><a href="catalogo-talla.html">Catálogo por Tallas</a></li>
+          <li><a href="liquidacion.html">Liquidación</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="ubicacion.html">Ubicación</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="register.html">Registrarse</a></li>
+          <!-- <li><a href="../index.html">Cerrar Sesión</a></li> -->
+        </ul>
       </nav>
-  </header>
+    </header>
     <main>
       <section id="contacto">
         <h1><ion-icon name="id-card-outline"></ion-icon> Contactanos</h1>
-        <form action="#" method="POST" id="formulario-contacto" autocomplete="off">      
+        <form
+          action="#"
+          method="POST"
+          id="formulario-contacto"
+          autocomplete="off"
+        >
           <div class="form-group">
-            <label for="fgenero"><ion-icon name="male-female-outline"></ion-icon> Genero:</label>        
-       <fieldset>
-            <ul>
-        <li>
-        <label for="title_1"> 
-          <input type="radio" id="title_1" name="title" value="K" required />
-          <ion-icon name="male-outline"></ion-icon>
-          Masculino
-        </label>
-        </li>
-       <li>
-        <label for="title_2">
-          <input type="radio" id="title_2" name="title" value="Q" required/>
-          <ion-icon name="female-outline"></ion-icon>
-          Femenino 
-        </label>
-      </li>
-       </ul>
-        </fieldset>
-        </div>
-        <div class="form-group">
-          <label for="fnombre"><ion-icon name="person-circle-outline"></ion-icon> Nombres:</label>
-         <input type="text" name="fnombre" placeholder="Ingresar Nombres" required />
-        </div>
-        <div class="form-group">
-          <label for="fapellidos"><ion-icon name="person-circle-outline"></ion-icon> Apellidos:</label>
-          <input type="text" name="fapellidos" placeholder="Ingresar Apellidos" required />
-        </div>
-        <div class="form-group">
-          <label for="fdoc"><ion-icon name="card-outline"></ion-icon> Documento de identidad (DNI): </label>
-          <input type="tel" name="fdoc" placeholder="DNI" pattern="[0-9]{8}" required/>
-        </div>
-        <div class="form-group">
-          <label for="email"><ion-icon name="at-outline"></ion-icon> Correo electrónico:</label>
-          <input type="email" name="email" placeholder="Ingresar Correo Electrónico" required/>
-        </div>
-        <div class="form-group">
-          <label for="pswd"><ion-icon name="lock-closed-outline"></ion-icon> Contraseñas:</label>
-          <input type="password" name="email" placeholder="Tu clave" required/>
-        </div>
-        <div class="form-group">
-          <label for="mensaje"><ion-icon name="mail-outline"></ion-icon> Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje" rows="10" required></textarea>
-        <div class="g-recaptcha" data-sitekey="6LdFlWAqAAAAACQeBf5dxMpqkFfVsvTySzQ1-i1Z">   
-        </div>
-        <div>
-          <center><button class="cta-button" type="submit">Enviar</button></center>
-        </div>
-      </form>
+            <label for="fgenero"
+              ><ion-icon name="male-female-outline"></ion-icon> Genero:</label
+            >
+            <fieldset>
+              <ul>
+                <li>
+                  <label for="title_1">
+                    <input
+                      type="radio"
+                      id="title_1"
+                      name="title"
+                      value="K"
+                      required
+                    />
+                    <ion-icon name="male-outline"></ion-icon>
+                    Masculino
+                  </label>
+                </li>
+                <li>
+                  <label for="title_2">
+                    <input
+                      type="radio"
+                      id="title_2"
+                      name="title"
+                      value="Q"
+                      required
+                    />
+                    <ion-icon name="female-outline"></ion-icon>
+                    Femenino
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <label for="fnombre"
+              ><ion-icon name="person-circle-outline"></ion-icon>
+              Nombres:</label
+            >
+            <input
+              type="text"
+              name="fnombre"
+              placeholder="Ingresar Nombres"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="fapellidos"
+              ><ion-icon name="person-circle-outline"></ion-icon>
+              Apellidos:</label
+            >
+            <input
+              type="text"
+              name="fapellidos"
+              placeholder="Ingresar Apellidos"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="fdoc"
+              ><ion-icon name="card-outline"></ion-icon> Documento de identidad
+              (DNI):
+            </label>
+            <input
+              type="tel"
+              name="fdoc"
+              placeholder="DNI"
+              pattern="[0-9]{8}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"
+              ><ion-icon name="at-outline"></ion-icon> Correo
+              electrónico:</label
+            >
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingresar Correo Electrónico"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="pswd"
+              ><ion-icon name="lock-closed-outline"></ion-icon>
+              Contraseñas:</label
+            >
+            <input
+              type="password"
+              name="email"
+              placeholder="Tu clave"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensaje"
+              ><ion-icon name="mail-outline"></ion-icon> Mensaje:</label
+            >
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Escriba su mensaje"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LdFlWAqAAAAACQeBf5dxMpqkFfVsvTySzQ1-i1Z"
+          ></div>
+          <div>
+            <center>
+              <button class="cta-button" type="submit">Enviar</button>
+            </center>
+          </div>
+        </form>
       </section>
     </main>
     <footer>
       <p>&copy; 2024 Novedades Isidora. Todos los derechos reservados.</p>
-  </footer>
+    </footer>
   </body>
 </html>
