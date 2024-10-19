@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registre un usuario</title>
     <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-    <div >
+    <div>
         <form class="formulario" id="loginForm" method="POST">
             <h1 class="titulo">CREAR CUENTA</h1>
-            <div>
-                <label for="nombres">Nombres</label>
-                <input type="text" name="nombres" placeholder="Ingrese sus nombres"   id="nombres" required>
-            </div>
-            <div>
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos" required>
+            <div class="nombre-apellido">
+                <div>
+                    <label for="nombres">Nombres</label>
+                    <input type="text" name="nombres" placeholder="Ingrese sus nombres" id="nombres" required>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos" required>
+                </div>
             </div>
             <div>
                 <label for="correo">Correo electronico</label>
@@ -25,6 +30,10 @@
             <div>
                 <label for="contrasena">Contraseña</label>
                 <input type="password" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+            <div class="icons">
+                <i class='bx bxl-google'></i>
+                <i class='bx bxl-facebook-circle'></i>
             </div>
             <div class="links">
                 <a href="../index.html" class="link">Iniciar sesion</a>
