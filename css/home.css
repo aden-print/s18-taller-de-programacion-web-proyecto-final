@@ -4,8 +4,21 @@
 #inicio {
     text-align: center;
     padding: 40px 0;
-    background-color: #f4f4f4;
+    background-image: url("https://img.freepik.com/fotos-premium/par-zapatillas-sientan-plataforma-madera-frente-campo_777078-2045.jpg");
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 15px; 
+    width: 80%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    height: 400px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    color: rgba(0, 0, 0, 0.868);
+    font-size: 30px;
+ 
 }
+
 
 #mision-vision {
     display: flex;
@@ -68,4 +81,23 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block; 
+    margin: 20px auto; 
+    transition: transform 0.3s;
+    display: flex;
+    
+}
+
+
+
+button:hover {
+    transform: scale(1.1); 
 }
