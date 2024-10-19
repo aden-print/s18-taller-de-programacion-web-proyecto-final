@@ -38,6 +38,8 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="tel"],
+input[type="password"],
+imput[type="radio"],
 select,
 textarea {
   width: 95%;
@@ -50,18 +52,27 @@ textarea {
 textarea {
   resize: none;
 }
-
-button {
-  background-color: #333;
-  width: min(110px, 100%);
-  color: #fff;
-  padding: 20px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
+ul li {
+  list-style: none;
 }
-
-button:hover {
-  background-color: #04792b;
+h1 ion-icon {
+  font-size: 30px;
+}
+ion-icon {
+  font-size: 18px;
+}
+.cta-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  width: min(110px, 100%);
+  padding: 20px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.9s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+.cta-button:hover {
+  transform: scale(1.1);
+  background-color: #273825;
 }
