@@ -8,21 +8,104 @@
     <link rel="stylesheet" href="../css/admin.css" />
   </head>
   <body>
-    <header class="header">
-      <img src="../img/logo.png">
-      <nav class="header__nav">
-        <a href="stock.html" class="header__link">Stock</a>
-        <a href="venta.html" class="header__link">Ventas</a>
-        <a href="compra.html" class="header__link">Compras</a>
-        <a href="talla.html" class="header__link">Tallas</a>
-        <a href="categoria.html" class="header__link">Categorias</a>
-        <a href="cliente.html" class="header__link">Clientes</a>
-        <a href="color.html" class="header__link">Colores</a>
-        <a href="proveedor.html" class="header__link">Proveedores</a>
-        <a href="marca.html" class="header__link">Marcas</a>
-        <a href="../index.html" class="header__link">Cerrar Sesión</a>
+    <div class="menu">
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+
+    <div class="barra-lateral">
+      <div>
+        <div class="nombre-pagina">
+          <img src="../img/logo-isidora.png" alt="Logo novedades" id="cloud" />
+          <!-- <ion-icon id="cloud" name="cloud-outline"></ion-icon> -->
+          <span>Novedades Isidora</span>
+        </div>
+        <!-- <button class="boton">
+          <ion-icon name="add-outline"></ion-icon>
+          <span>Create new</span>
+        </button> -->
+      </div>
+
+      <nav class="navegacion">
+        <ul>
+          <li>
+            <a id="inbox" href="stock.html">
+              <ion-icon name="mail-unread-outline"></ion-icon>
+              <span>Stock</span>
+            </a>
+          </li>
+          <li>
+            <a href="venta.html">
+              <ion-icon name="star-outline"></ion-icon>
+              <span>Ventas</span>
+            </a>
+          </li>
+          <li>
+            <a href="compra.html">
+              <ion-icon name="paper-plane-outline"></ion-icon>
+              <span>Compras</span>
+            </a>
+          </li>
+          <li>
+            <a href="talla.html">
+              <ion-icon name="document-outline"></ion-icon>
+              <span>Tallas</span>
+            </a>
+          </li>
+          <li>
+            <a href="cliente.html">
+              <ion-icon name="bookmark-outline"></ion-icon>
+              <span>Clientes</span>
+            </a>
+          </li>
+          <li>
+            <a href="color.html">
+              <ion-icon name="alert-outline"></ion-icon>
+              <span>Colores</span>
+            </a>
+          </li>
+          <li>
+            <a href="proveedor.html">
+              <ion-icon name="trash-outline"></ion-icon>
+              <span>Proveedores</span>
+            </a>
+          </li>
+          <li>
+            <a href="marca.html">
+              <ion-icon name="trash-outline"></ion-icon>
+              <span>Marcas</span>
+            </a>
+          </li>
+        </ul>
       </nav>
-    </header>
+
+      <div>
+        <div class="linea"></div>
+
+        <div class="modo-oscuro">
+          <div class="info">
+            <ion-icon name="moon-outline"></ion-icon>
+            <span>Dark Mode</span>
+          </div>
+          <div class="switch">
+            <div class="base">
+              <div class="circulo"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="usuario">
+          <img src="../img/Jhampier.jpg" alt="logo" />
+          <div class="info-usuario">
+            <div class="nombre-email">
+              <span class="nombre">Angel</span>
+              <span class="email">Angel@gmail.com</span>
+            </div>
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
     <main class="main">
       <section class="section">
         <h2 class="section__title">Ventas</h2>
@@ -205,5 +288,15 @@
     <footer>
       <p>&copy; 2024 Novedades Isidora. Todos los derechos reservados.</p>
     </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/cambiar-de-color.js"></script>
   </body>
 </html>
