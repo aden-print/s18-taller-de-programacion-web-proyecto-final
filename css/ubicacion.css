@@ -30,7 +30,6 @@ ul {
   gap: 30px;
 }
 .product {
-  background-color: #ffffbf;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,4 +44,20 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+@media (max-width: 860px) {
+  main {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  section {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }

@@ -6,36 +6,42 @@
     <link rel="stylesheet" href="../css/contacto.css" />
     <title>Novedades Isidora - Contacto</title>
     <link rel="preconnect" href="ubicacion.html">
+    <link rel="shortcut icon" href="../img/logo-isidora.png" type="image/x-icon">
   </head>
   <body>
     <header>
-      <img src="../img/logo.png" alt="Imagen de la tienda">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="Imagen de la tienda">
+      </a>
       <nav>
           <ul>
-              <li><a href="home.html">Inicio</a></li>
-              <li><a href="#tipos-calzado">Tipos de calzado</a></li>
-              <li><a href="#catalogos-talla">Catálogos por talla</a></li>
-              <li><a href="#liquidacion">Liquidación</a></li>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="tipo-calzado.html">Tipos de Calzado</a></li>
+              <li><a href="catalogo-talla.html">Catálogo por Tallas</a></li>
+              <li><a href="liquidacion.html">Liquidación</a></li>
               <li><a href="contacto.html">Contacto</a></li>
               <li><a href="ubicacion.html">Ubicación</a></li>
+              <li><a href="login.html">Iniciar Sesión</a></li>
+              <li><a href="register.html">Registrarse</a></li>
+              <!-- <li><a href="../index.html">Cerrar Sesión</a></li> -->
           </ul>
       </nav>
   </header>
     <main>
       <section id="contacto">
         <h1>Contactanos</h1>
-        <form action="#" method="POST" id="formulario-contacto">
+        <form action="#" method="POST" id="formulario-contacto" autocomplete="off">
         <div class="form-group">
           <!-- Aquí irán los elementos del formulario -->
-          <label for="fnombre">Nombre:</label>
-         <input type="text" name="fnombre" placeholder="Ingresar Nombre" required />
+          <label for="fnombre">Nombres:</label>
+         <input type="text" name="fnombre" placeholder="Ingresar Nombres" required />
         </div>
         <div class="form-group">
           <label for="fapellidos">Apellidos:</label>
           <input type="text" name="fapellidos" placeholder="Ingresar Apellidos" required />
         </div>
         <div class="form-group">
-          <label for="fdoc">Documento de identidad: </label>
+          <label for="fdoc">Documento de identidad (DNI): </label>
           <input type="tel" name="fdoc" placeholder="DNI" pattern="[0-9]{8}" required/>
         </div>
         <div class="form-group">
@@ -43,8 +49,12 @@
           <input type="email" name="email" placeholder="Ingresar Correo Electrónico" required/>
         </div>
         <div class="form-group">
+          <label for="email">Asunto:</label>
+          <input type="text" name="email" placeholder="Ingresar el Asunto" required/>
+        </div>
+        <div class="form-group">
           <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="10" required></textarea>
+          <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje" rows="10" required></textarea>
         </div>
           <center><button type="submit">Enviar</button></center>
         </div>
