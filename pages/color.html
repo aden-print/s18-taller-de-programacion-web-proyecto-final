@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colores</title>
+    <link
+      rel="shortcut icon"
+      href="../img/logo-isidora.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/admin.css" />
   </head>
@@ -16,64 +21,117 @@
     <div class="barra-lateral">
       <div>
         <div class="nombre-pagina">
-          <img src="../img/logo-isidora.png" alt="Logo novedades" id="cloud" />
-          <!-- <ion-icon id="cloud" name="cloud-outline"></ion-icon> -->
+          <img
+            id="logoHeader"
+            src="../img/logo-isidora.png"
+            alt="Logo Novedades Isidora"
+          />
           <span>Novedades Isidora</span>
         </div>
-        <!-- <button class="boton">
-          <ion-icon name="add-outline"></ion-icon>
-          <span>Create new</span>
-        </button> -->
       </div>
 
       <nav class="navegacion">
         <ul>
           <li>
-            <a id="inbox" href="stock.html">
-              <ion-icon name="mail-unread-outline"></ion-icon>
+            <a href="stock.html">
+              <ion-icon name="storefront-outline"></ion-icon>
               <span>Stock</span>
             </a>
           </li>
           <li>
             <a href="venta.html">
-              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon name="cash-outline"></ion-icon>
               <span>Ventas</span>
             </a>
           </li>
           <li>
             <a href="compra.html">
-              <ion-icon name="paper-plane-outline"></ion-icon>
+              <ion-icon name="cart-outline"></ion-icon>
               <span>Compras</span>
             </a>
           </li>
           <li>
-            <a href="talla.html">
-              <ion-icon name="document-outline"></ion-icon>
-              <span>Tallas</span>
-            </a>
-          </li>
-          <li>
-            <a href="cliente.html">
-              <ion-icon name="bookmark-outline"></ion-icon>
-              <span>Clientes</span>
-            </a>
-          </li>
-          <li>
-            <a href="color.html">
-              <ion-icon name="alert-outline"></ion-icon>
-              <span>Colores</span>
-            </a>
-          </li>
-          <li>
             <a href="proveedor.html">
-              <ion-icon name="trash-outline"></ion-icon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-truck"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#2c3e50"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path
+                  d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
+                />
+              </svg>
               <span>Proveedores</span>
             </a>
           </li>
           <li>
+            <a href="cliente.html">
+              <ion-icon name="people-outline"></ion-icon>
+              <span>Clientes</span>
+            </a>
+          </li>
+          <li>
+            <a href="productos.html">
+              <ion-icon name="cube-outline"></ion-icon>
+              <span>Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="categoria.html">
+              <ion-icon name="grid-outline"></ion-icon>
+              <span>Categorias</span>
+            </a>
+          </li>
+          <li>
+            <a href="talla.html">
+              <ion-icon name="swap-vertical-outline"></ion-icon>
+              <span>Tallas</span>
+            </a>
+          </li>
+          <li>
+            <a id="pagina-actual" href="color.html">
+              <ion-icon name="color-palette-outline"></ion-icon>
+              <span>Colores</span>
+            </a>
+          </li>
+          <li>
             <a href="marca.html">
-              <ion-icon name="trash-outline"></ion-icon>
+              <ion-icon name="checkmark-circle-outline"></ion-icon>
               <span>Marcas</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-logout-2"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"
+                />
+                <path d="M15 12h-12l3 -3" />
+                <path d="M6 15l-3 -3" />
+              </svg>
+              <span>Cerrar Sesión</span>
             </a>
           </li>
         </ul>
@@ -95,11 +153,11 @@
         </div>
 
         <div class="usuario">
-          <img src="../img/Jhampier.jpg" alt="logo" />
+          <img src="../img/angel.jpg" alt="logo" />
           <div class="info-usuario">
             <div class="nombre-email">
               <span class="nombre">Angel</span>
-              <span class="email">Angel@gmail.com</span>
+              <span class="email">angel@gmail.com</span>
             </div>
             <ion-icon name="ellipsis-vertical-outline"></ion-icon>
           </div>
@@ -111,17 +169,13 @@
       <section class="section">
         <h2 class="section__title">Colores</h2>
         <div class="button">
-          <button class="button__add">Agregar color</button>
+          <button class="button__add">Agregar Color</button>
         </div>
         <table class="table">
           <thead class="table__head">
             <tr class="table__row">
               <th class="table__head-cell">ID</th>
-              <th class="table__head-cell">Fecha</th>
-              <th class="table__head-cell">Cliente</th>
-              <th class="table__head-cell">SubTotal</th>
-              <th class="table__head-cell">Total Impuestos</th>
-              <th class="table__head-cell">Total</th>
+              <th class="table__head-cell">Nombre del Color</th>
               <th class="table__head-cell">Acciones</th>
             </tr>
           </thead>
@@ -129,10 +183,6 @@
             <tr class="table__row">
               <td class="table__cell">1</td>
               <td class="table__cell">Zapatos</td>
-              <td class="table__cell">Adidas</td>
-              <td class="table__cell">30</td>
-              <td class="table__cell">S/ 150.00</td>
-              <td class="table__cell">10</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -155,10 +205,6 @@
             <tr class="table__row">
               <td class="table__cell">2</td>
               <td class="table__cell">Zapatillas</td>
-              <td class="table__cell">Nike</td>
-              <td class="table__cell">40</td>
-              <td class="table__cell">S/100.00</td>
-              <td class="table__cell">5</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -181,10 +227,6 @@
             <tr class="table__row">
               <td class="table__cell">3</td>
               <td class="table__cell">Botas</td>
-              <td class="table__cell">Puma</td>
-              <td class="table__cell">30</td>
-              <td class="table__cell">S/45.00</td>
-              <td class="table__cell">23</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -206,11 +248,7 @@
             </tr>
             <tr>
               <td class="table__cell">4</td>
-              <td class="table__cell">Sandalias</td>
-              <td class="table__cell">Tigre</td>
-              <td class="table__cell">42</td>
-              <td class="table__cell">S/39.00</td>
-              <td class="table__cell">7</td>
+              <td class="table__cell">Crema</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -233,10 +271,6 @@
             <tr>
               <td class="table__cell">5</td>
               <td class="table__cell">Tacos</td>
-              <td class="table__cell">Tigre</td>
-              <td class="table__cell">42</td>
-              <td class="table__cell">S/39.00</td>
-              <td class="table__cell">7</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -258,11 +292,7 @@
             </tr>
             <tr>
               <td class="table__cell">6</td>
-              <td class="table__cell">Cors</td>
-              <td class="table__cell">Tigre</td>
-              <td class="table__cell">42</td>
-              <td class="table__cell">S/39.00</td>
-              <td class="table__cell">2</td>
+              <td class="table__cell">Rojo</td>
               <td class="table__cell">
                 <button class="table__button">
                   <img
@@ -286,9 +316,6 @@
         </table>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2024 Novedades Isidora. Todos los derechos reservados.</p>
-    </footer>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -298,6 +325,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="../js/theme.js"></script>
-    <script src="../js/cambiar-de-color.js"></script>
+    <script src="../js/mode.js"></script>
   </body>
 </html>
