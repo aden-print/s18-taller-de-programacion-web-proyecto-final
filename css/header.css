@@ -53,32 +53,6 @@ nav ul li a:hover {
   border-bottom: 2px solid black;
 }
 
-.header {
-  padding: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.header__nav {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  column-gap: 20px;
-}
-
-.header__nav .header__link {
-  text-decoration: none;
-  color: #000;
-}
-
-.header__nav .header__link:hover {
-  color: rgb(33, 156, 228);
-}
-
 @media (max-width: 1010px) {
   header {
     flex-direction: column;
