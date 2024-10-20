@@ -23,7 +23,9 @@ git clone https://github.com/AngelChira/s18-taller-de-programacion-web-proyecto-
 
 ## Pagina de iconos
 
+Para la vista de admin:
 https://ionic.io/ionicons
+https://tablericons.com/
 
 ---
 
