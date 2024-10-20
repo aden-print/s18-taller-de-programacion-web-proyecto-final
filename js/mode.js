@@ -5,6 +5,7 @@ const palanca = document.querySelector(".switch");
 const circulo = document.querySelector(".circulo");
 const menu = document.querySelector(".menu");
 const main = document.querySelector("main");
+const cerrarSesion = document.querySelector("#cerrarSesion");
 
 // Seleccionar la raiz del documento (:root)
 const root = document.documentElement;
@@ -41,4 +42,11 @@ cloud.addEventListener("click", () => {
   spans.forEach((span) => {
     span.classList.toggle("oculto");
   });
+});
+
+// Cerrar Sesión
+cerrarSesion.addEventListener("click", (event) => {
+  // Evita el envío del formulario
+  event.preventDefault();
+  window.location.href = "../index.html";
 });

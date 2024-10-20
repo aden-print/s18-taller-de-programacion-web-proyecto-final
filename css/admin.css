@@ -215,6 +215,10 @@ body {
   color: var(--color-menu-hover-texto);
 }
 
+#pagina-actual svg {
+  stroke: var(--color-menu-hover-texto);
+}
+
 .barra-lateral .navegacion li a ion-icon,
 .barra-lateral .navegacion li a svg {
   min-width: 50px;
