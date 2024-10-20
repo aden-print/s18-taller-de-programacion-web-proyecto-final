@@ -1,5 +1,5 @@
 @import url("header.css");
-@import url("footer.css");  
+@import url("footer.css");
 
 * {
   box-sizing: border-box;
@@ -64,7 +64,7 @@ button {
   border-radius: 5px;
 }
 
-i{
+i {
   font-size: 20px;
   margin-right: 10px;
 }
