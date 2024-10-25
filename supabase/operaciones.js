@@ -16,6 +16,14 @@ export async function listar(tabla, idTabla) {
   return respuesta;
 }
 
+export async function listarDatos(tabla, idTabla, campos) {
+  const respuesta = await supabaseClient
+    .from(tabla)
+    .select(campos)
+    .order(idTabla, { ascending: true });
+  return respuesta;
+}
+
 export async function crear(table, data) {
   const { error } = await supabaseClient.from(table).insert(data);
   if (error) {

@@ -1,195 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clientes</title>
-    <link
-      rel="shortcut icon"
-      href="../img/logo-isidora.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/admin.css" />
-  </head>
-  <body>
-    <div class="menu">
-      <ion-icon name="menu-outline"></ion-icon>
-      <ion-icon name="close-outline"></ion-icon>
-    </div>
 
-    <div class="barra-lateral">
-      <div>
-        <div class="nombre-pagina">
-          <img
-            id="logoHeader"
-            src="../img/logo-isidora.png"
-            alt="Logo Novedades Isidora"
-          />
-          <span>Novedades Isidora</span>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes</title>
+  <link rel="shortcut icon" href="../img/logo-isidora.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
 
-      <nav class="navegacion">
-        <ul>
-          <li>
-            <a href="stock.html">
-              <ion-icon name="storefront-outline"></ion-icon>
-              <span>Stock</span>
-            </a>
-          </li>
-          <li>
-            <a href="venta.html">
-              <ion-icon name="cash-outline"></ion-icon>
-              <span>Ventas</span>
-            </a>
-          </li>
-          <li>
-            <a href="compra.html">
-              <ion-icon name="cart-outline"></ion-icon>
-              <span>Compras</span>
-            </a>
-          </li>
-          <li>
-            <a href="proveedor.html">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-truck"
-                width="25"
-                height="25"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="#2c3e50"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                <path
-                  d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                />
-              </svg>
-              <span>Proveedores</span>
-            </a>
-          </li>
-          <li>
-            <a id="pagina-actual" href="cliente.html">
-              <ion-icon name="people-outline"></ion-icon>
-              <span>Clientes</span>
-            </a>
-          </li>
-          <li>
-            <a href="productos.html">
-              <ion-icon name="cube-outline"></ion-icon>
-              <span>Productos</span>
-            </a>
-          </li>
-          <li>
-            <a href="categoria.html">
-              <ion-icon name="grid-outline"></ion-icon>
-              <span>Categorias</span>
-            </a>
-          </li>
-          <li>
-            <a href="talla.html">
-              <ion-icon name="swap-vertical-outline"></ion-icon>
-              <span>Tallas</span>
-            </a>
-          </li>
-          <li>
-            <a href="color.html">
-              <ion-icon name="color-palette-outline"></ion-icon>
-              <span>Colores</span>
-            </a>
-          </li>
-          <li>
-            <a href="marca.html">
-              <ion-icon name="checkmark-circle-outline"></ion-icon>
-              <span>Marcas</span>
-            </a>
-          </li>
-          <li>
-            <a href="../index.html">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-logout-2"
-                width="25"
-                height="25"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"
-                />
-                <path d="M15 12h-12l3 -3" />
-                <path d="M6 15l-3 -3" />
-              </svg>
-              <span>Cerrar Sesión</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<body>
+  <div class="menu">
+    <ion-icon name="menu-outline"></ion-icon>
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
 
-      <div>
-        <div class="linea"></div>
-
-        <div class="modo-oscuro">
-          <div class="info">
-            <ion-icon name="moon-outline"></ion-icon>
-            <span>Dark Mode</span>
-          </div>
-          <div class="switch">
-            <div class="base">
-              <div class="circulo"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="usuario">
-          <img src="../img/angel.jpg" alt="logo" />
-          <div class="info-usuario">
-            <div class="nombre-email">
-              <span class="nombre">Angel</span>
-              <span class="email">angel@gmail.com</span>
-            </div>
-            <ion-icon
-              id="cerrarSesion"
-              name="ellipsis-vertical-outline"
-            ></ion-icon>
-          </div>
-        </div>
+  <div class="barra-lateral">
+    <div>
+      <div class="nombre-pagina">
+        <img id="logoHeader" src="../img/logo-isidora.png" alt="Logo Novedades Isidora" />
+        <span>Novedades Isidora</span>
       </div>
     </div>
 
-    <main class="main">
-      <section class="section">
-        <h2 class="section__title">Clientes</h2>
-        <div class="button">
-          <button class="button__add">Agregar Cliente</button>
+    <nav class="navegacion">
+      <ul>
+        <li>
+          <a href="stock.html">
+            <ion-icon name="storefront-outline"></ion-icon>
+            <span>Stock</span>
+          </a>
+        </li>
+        <li>
+          <a href="venta.html">
+            <ion-icon name="cash-outline"></ion-icon>
+            <span>Ventas</span>
+          </a>
+        </li>
+        <li>
+          <a href="compra.html">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span>Compras</span>
+          </a>
+        </li>
+        <li>
+          <a href="proveedor.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="25" height="25"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+            </svg>
+            <span>Proveedores</span>
+          </a>
+        </li>
+        <li>
+          <a id="pagina-actual" href="cliente.html">
+            <ion-icon name="people-outline"></ion-icon>
+            <span>Clientes</span>
+          </a>
+        </li>
+        <li>
+          <a href="productos.html">
+            <ion-icon name="cube-outline"></ion-icon>
+            <span>Productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="categoria.html">
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Categorias</span>
+          </a>
+        </li>
+        <li>
+          <a href="talla.html">
+            <ion-icon name="swap-vertical-outline"></ion-icon>
+            <span>Tallas</span>
+          </a>
+        </li>
+        <li>
+          <a href="color.html">
+            <ion-icon name="color-palette-outline"></ion-icon>
+            <span>Colores</span>
+          </a>
+        </li>
+        <li>
+          <a href="marca.html">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <span>Marcas</span>
+          </a>
+        </li>
+        <li>
+          <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="25" height="25"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+              <path d="M15 12h-12l3 -3" />
+              <path d="M6 15l-3 -3" />
+            </svg>
+            <span>Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="linea"></div>
+
+      <div class="modo-oscuro">
+        <div class="info">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span>Dark Mode</span>
         </div>
-        <table class="table">
-          <thead class="table__head">
-            <tr class="table__row">
-              <th class="table__head-cell">ID</th>
-              <th class="table__head-cell">Nombre</th>
-              <th class="table__head-cell">Apellidos</th>
-              <th class="table__head-cell">Correo</th>
-              <th class="table__head-cell">Edad</th>
-              <th class="table__head-cell">Sexo</th>
-              <th class="table__head-cell">Teléfono</th>
-              <th class="table__head-cell">Dirección</th>
-              <th class="table__head-cell">Acciones</th>
-            </tr>
-          </thead>
-          <tbody class="table__body">
-            <tr class="table__row">
+        <div class="switch">
+          <div class="base">
+            <div class="circulo"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usuario">
+        <img src="../img/angel.jpg" alt="logo" />
+        <div class="info-usuario">
+          <div class="nombre-email">
+            <span class="nombre">Angel</span>
+            <span class="email">angel@gmail.com</span>
+          </div>
+          <ion-icon id="cerrarSesion" name="ellipsis-vertical-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <section class="section">
+      <h2 class="section__title">Clientes</h2>
+      <div class="button">
+        <button class="button__add">Agregar Cliente</button>
+      </div>
+      <table class="table">
+        <thead class="table__head">
+          <tr class="table__row">
+            <th class="table__head-cell">ID</th>
+            <th class="table__head-cell">Nombre</th>
+            <th class="table__head-cell">Apellidos</th>
+            <th class="table__head-cell">DNI</th>
+            <th class="table__head-cell">Correo</th>
+            <th class="table__head-cell">Teléfono</th>
+            <th class="table__head-cell">Dirección</th>
+            <th class="table__head-cell">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+          <!-- <tr class="table__row">
               <td class="table__cell">1</td>
               <td class="table__cell">Juan</td>
               <td class="table__cell">Pérez</td>
@@ -412,20 +380,17 @@
                   />
                 </button>
               </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="../js/theme.js"></script>
-    <script src="../js/mode.js"></script>
-  </body>
+            </tr> -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/mode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script type="module" src="../js/cliente.js"></script>
+</body>
+
 </html>
