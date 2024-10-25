@@ -1,0 +1,6 @@
+Buenas noches profesor, le adjunto el avance 02:
+
+Chira Romero Angel Manuel desarrollo las paginas de product.html, productos.html, categoria.html, cliente.html, color.html, compra.html, contacto.html, marca.html, proveedor.html, stock.html, venta.html, talla.html, tabla.css, admin.css, app.js, mode.js y theme.js.
+Suarez Vite Milton Aldair desarrollo las paginas de login.html, register.html, recuperacion.html, login.css, register.css, recuperar.css
+Inga Albines Brandon desarrollo las paginas de contacto.html, ubicacion.html, contacto.css, ubicacion.css.
+Ramos Coveñas Jose Aldair desarrollo las paginas de index.html, header.css, footer.css y style.css.
