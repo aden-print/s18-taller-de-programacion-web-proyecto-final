@@ -1,19 +1,19 @@
-import { listar } from "../supabase/operaciones.js";
+import { listarDatos } from "../supabase/operaciones.js";
 
-const dataMarcas = await listar("marca", "idmarca");
-console.log(dataMarcas);
+async function cargarMarcas() {
+  const dataMarcas = await listarDatos("marca", "idmarca", "*");
 
-function mostrarMarcas() {
-  const { data: marcas, error } = dataMarcas;
-  if (error) {
-    alert("Error al cargar las marcas");
-    return;
-  }
-  const tbody = document.querySelector(".table__body");
-  tbody.innerHTML = "";
-  marcas.forEach((marca) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+  function mostrarMarcas() {
+    const { data: marcas, error } = dataMarcas;
+    if (error) {
+      alert("Error al cargar las marcas");
+      return;
+    }
+    const tbody = document.querySelector(".table__body");
+    tbody.innerHTML = "";
+    marcas.forEach((marca) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
       <td class="table__cell">${marca.idmarca}</td>
         <td class="table__cell">${marca.nombre}</td>
         <td class="table__cell">
@@ -35,9 +35,12 @@ function mostrarMarcas() {
         </button>
       </td>
     `;
-    tr.classList.add("table__row");
-    tbody.appendChild(tr);
-  });
+      tr.classList.add("table__row");
+      tbody.appendChild(tr);
+    });
+  }
+
+  mostrarMarcas();
 }
 
-mostrarMarcas();
+cargarMarcas();
