@@ -1,19 +1,19 @@
-import { listar } from "../supabase/operaciones.js";
+import { listarDatos } from "../supabase/operaciones.js";
 
-const dataColores = await listar("color", "idcolor");
-console.log(dataColores);
+async function cargarColores() {
+  const dataColores = await listarDatos("color", "idcolor", "*");
 
-function mostrarColores() {
-  const { data: colores, error } = dataColores;
-  if (error) {
-    alert("Error al cargar los colores");
-    return;
-  }
-  const tbody = document.querySelector(".table__body");
-  tbody.innerHTML = "";
-  colores.forEach((color) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+  function mostrarColores() {
+    const { data: colores, error } = dataColores;
+    if (error) {
+      alert("Error al cargar los colores");
+      return;
+    }
+    const tbody = document.querySelector(".table__body");
+    tbody.innerHTML = "";
+    colores.forEach((color) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
       <td class="table__cell">${color.idcolor}</td>
         <td class="table__cell">${color.nombre}</td>
         <td class="table__cell">
@@ -35,9 +35,12 @@ function mostrarColores() {
         </button>
       </td>
     `;
-    tr.classList.add("table__row");
-    tbody.appendChild(tr);
-  });
+      tr.classList.add("table__row");
+      tbody.appendChild(tr);
+    });
+  }
+
+  mostrarColores();
 }
 
-mostrarColores();
+cargarColores();
