@@ -6,8 +6,6 @@ const dataClientes = await listarDatos(
   "idcliente, dni, direccion, persona(nombres, apellidos, correo, telefono)"
 );
 
-console.log(dataClientes);
-
 function mostrarClientes() {
   const { data: clientes, error } = dataClientes;
   if (error) {
