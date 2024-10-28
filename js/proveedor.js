@@ -1,24 +1,23 @@
 import { listarDatos } from "../supabase/operaciones.js";
 
-const dataProveedores = await listarDatos(
-  "proveedor",
-  "idproveedor",
-  "idproveedor, persona(nombres, apellidos, correo,telefono)"
-);
+async function cargarProveedores() {
+  const dataProveedores = await listarDatos(
+    "proveedor",
+    "idproveedor",
+    "idproveedor, persona(nombres, apellidos, correo,telefono)"
+  );
 
-console.log(dataProveedores);
-
-function mostrarProveedores() {
-  const { data: proveedores, error } = dataProveedores;
-  if (error) {
-    alert("Error al cargar los proveedores");
-    return;
-  }
-  const tbody = document.querySelector(".table__body");
-  tbody.innerHTML = "";
-  proveedores.forEach((proveedor) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+  function mostrarProveedores() {
+    const { data: proveedores, error } = dataProveedores;
+    if (error) {
+      alert("Error al cargar los proveedores");
+      return;
+    }
+    const tbody = document.querySelector(".table__body");
+    tbody.innerHTML = "";
+    proveedores.forEach((proveedor) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
           <td class="table__cell">${proveedor.idproveedor}</td>
           <td class="table__cell">${proveedor.persona.nombres}</td>
           <td class="table__cell">${proveedor.persona.apellidos}</td>
@@ -43,9 +42,12 @@ function mostrarProveedores() {
               </button>
           </td>
           `;
-    tr.classList.add("table__row");
-    tbody.appendChild(tr);
-  });
+      tr.classList.add("table__row");
+      tbody.appendChild(tr);
+    });
+  }
+
+  mostrarProveedores();
 }
 
-mostrarProveedores();
+cargarProveedores();
