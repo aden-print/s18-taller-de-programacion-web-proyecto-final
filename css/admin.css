@@ -382,6 +382,7 @@ main.min-main {
   font-size: 16px;
 }
 
+/* Inicio boton agregar */
 .button {
   width: 90%;
   display: grid;
@@ -406,7 +407,52 @@ main.min-main {
   background-color: #45a049;
   color: #000;
 }
+/* Fin boton agregar */
 
+/* Inicio search */
+.search {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px auto;
+}
+
+.barra-busqueda {
+  width: 350px;
+  border: 1px solid var(--color-border-tabla);
+  background-color: var(--color-barra-lateral);
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  padding: 0 10px 0 0;
+}
+
+.barra-busqueda input {
+  width: 100%;
+  background-color: var(--color-barra-lateral);
+  height: 45px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.barra-busqueda input:focus {
+  outline: none;
+}
+
+.barra-busqueda span {
+  margin: auto;
+  cursor: pointer;
+}
+
+.barra-busqueda span ion-icon {
+  font-size: 20px;
+}
+/* Inicio formulario */
+/* Fin formulario */
+
+/* Inicio tabla */
 table {
   width: 90%;
   margin: 0 auto;
@@ -490,5 +536,9 @@ th {
   main,
   main.min-main {
     margin-left: 0;
+  }
+
+  .search {
+    width: 100%;
   }
 }
