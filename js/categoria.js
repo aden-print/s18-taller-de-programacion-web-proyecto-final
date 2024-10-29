@@ -1,4 +1,11 @@
-import { listarDatos } from "../supabase/operaciones.js";
+import { listarDatos, crearRegistro } from "../supabase/operaciones.js";
+
+const modal = document.querySelector(".modal-agregar");
+const nombreCategoria = document.querySelector("#nombre");
+const formAgregar = document.querySelector(".form-agregar");
+const btnAgregar = document.querySelector(".btn-agregar");
+const mensajeAgregar = document.querySelector(".mensaje-agregar");
+const data = { nombre: "" };
 
 async function cargarCategorias() {
   const dataCategorias = await listarDatos("categoria", "idcategoria", "*");
@@ -44,3 +51,39 @@ async function cargarCategorias() {
 }
 
 cargarCategorias();
+
+function limpiarFormulario() {
+  nombreCategoria.value = "";
+}
+
+nombreCategoria.addEventListener("input", leerInput);
+
+function leerInput(e) {
+  data[e.target.id] = e.target.value;
+}
+
+formAgregar.addEventListener("submit", async function (evento) {
+  evento.preventDefault();
+  const { nombre } = data;
+  if (nombre.trim() === "") {
+    alert("El campo nombre no puede estar vacio");
+    return;
+  }
+
+  btnAgregar.value = "Agregando...";
+  const respuesta = await crearRegistro("categoria", data);
+  if (respuesta.error) {
+    alert("Error al agregar la categoria");
+    mensajeAgregar.textContent = "Error al agregar la categoria";
+    return;
+  }
+  btnAgregar.value = "Crear Categoria";
+  mensajeAgregar.classList.remove("red");
+  mensajeAgregar.textContent = "Categoria agregada correctamente";
+  setTimeout(() => {
+    modal.classList.remove("modal-show");
+    cargarCategorias();
+    limpiarFormulario();
+    mensajeAgregar.textContent = "";
+  }, 4000);
+});
