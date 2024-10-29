@@ -28,7 +28,7 @@ btnCancelar.addEventListener("click", (e) => {
   modal.classList.remove("modal-show");
 });
 
-function cargarCategorias() {
+async function cargarCategorias() {
   const dataCategorias = await listarDatos("categoria", "idcategoria", "*");
 
   function mostrarCategorias() {
@@ -73,7 +73,7 @@ function cargarCategorias() {
 
 cargarCategorias();
 
-export function limpiarFormulario() {
+function limpiarFormulario() {
   nombreCategoria.value = "";
 }
 
