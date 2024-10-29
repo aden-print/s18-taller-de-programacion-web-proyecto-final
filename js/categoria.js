@@ -70,14 +70,14 @@ formAgregar.addEventListener("submit", async function (evento) {
     return;
   }
 
-  btnAgregar.value = "Agregando...";
+  btnAgregar.value = "Guardando...";
   const respuesta = await crearRegistro("categoria", data);
   if (respuesta.error) {
     alert("Error al agregar la categoria");
     mensajeAgregar.textContent = "Error al agregar la categoria";
     return;
   }
-  btnAgregar.value = "Crear Categoria";
+  btnAgregar.value = "Guardar";
   mensajeAgregar.classList.remove("red");
   mensajeAgregar.textContent = "Categoria agregada correctamente";
   setTimeout(() => {
