@@ -8,7 +8,7 @@ export async function listarDatos(tabla, idTabla, campos) {
   return respuesta;
 }
 
-export async function crear(table, data) {
+export async function crearRegistro(table, data) {
   const respuesta = await supabaseClient.from(table).insert(data);
   return respuesta;
 }
