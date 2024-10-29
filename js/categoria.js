@@ -1,13 +1,34 @@
 import { listarDatos, crearRegistro } from "../supabase/operaciones.js";
 
 const modal = document.querySelector(".modal-agregar");
+const mostrarModal = document.querySelector(".button__add");
+const cerrarModal = document.querySelector(".modal-close");
+const btnCancelar = document.querySelector(".btn-cancelar");
 const nombreCategoria = document.querySelector("#nombre");
 const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
 
-async function cargarCategorias() {
+mostrarModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  limpiarFormulario();
+  modal.classList.add("modal-show");
+});
+
+cerrarModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  limpiarFormulario();
+  modal.classList.remove("modal-show");
+});
+
+btnCancelar.addEventListener("click", (e) => {
+  e.preventDefault();
+  limpiarFormulario();
+  modal.classList.remove("modal-show");
+});
+
+function cargarCategorias() {
   const dataCategorias = await listarDatos("categoria", "idcategoria", "*");
 
   function mostrarCategorias() {
@@ -52,7 +73,7 @@ async function cargarCategorias() {
 
 cargarCategorias();
 
-function limpiarFormulario() {
+export function limpiarFormulario() {
   nombreCategoria.value = "";
 }
 
