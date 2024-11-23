@@ -488,7 +488,8 @@ th {
   color: var(--color-menu-hover-texto);
 }
 
-.table__cell .table__button {
+.table__cell .table__delete,
+.table__cell .table__edit {
   border: none;
   border-radius: 5px;
   color: white;
@@ -497,11 +498,11 @@ th {
   cursor: pointer;
 }
 
-.table__cell .table__button:last-child {
+.table__cell .table__delete {
   background-color: #f44336;
 }
 
-.table__cell .table__button:first-child {
+.table__cell .table__edit {
   background-color: rgb(255, 193, 7);
 }
 
@@ -564,23 +565,23 @@ th {
   font-size: 30px;
 }
 
-.form-campos {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
+.modal-body {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.form-campos .form-label {
+.form-agregar {
+  display: grid;
+  gap: 20px;
+}
+
+.form-agregar .form-label {
   font-size: 20px;
 }
 
-.form-campos .form-input {
+.form-agregar .form-input {
+  width: 100%;
   font-size: 18px;
-}
-
-.form-campos .form-nombre {
-  width: min(500px, 100%);
   border: 1px solid var(--color-border-tabla);
   border-radius: 5px;
   padding: 10px;
@@ -589,9 +590,8 @@ th {
 .form-botones {
   display: flex;
   gap: 15px;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-left: 100px;
 }
 
 .form-botones .btn-agregar,
@@ -629,6 +629,22 @@ th {
   color: #f44336;
 }
 /* Fin modal agregar */
+
+/* Inicio modal editar */
+.modal-editar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+}
+
+/* Fin modal editar */
 
 /* Fin main */
 
@@ -682,10 +698,9 @@ th {
     font-size: 25px;
   }
 
-  .form-campos {
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 10px;
+  .modal-body {
+    width: 100%;
+    margin: 0;
   }
 
   .form-campos .form-label {
