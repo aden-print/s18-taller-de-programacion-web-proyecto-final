@@ -1,24 +1,35 @@
 import { supabaseClient } from "./supabase.js";
 
-export async function obtenerNombre(tabla, nombreColumna, idTabla) {
+export async function listarDatos(tabla, idTabla, campos) {
   const respuesta = await supabaseClient
     .from(tabla)
-    .select(nombreColumna)
-    .eq(idTabla, idTabla);
-  return respuesta;
-}
-
-export async function listar(tabla, idTabla) {
-  const respuesta = await supabaseClient
-    .from(tabla)
-    .select("*")
+    .select(campos)
     .order(idTabla, { ascending: true });
   return respuesta;
 }
 
-export async function crear(table, data) {
-  const { error } = await supabaseClient.from(table).insert(data);
-  if (error) {
-    throw new Error(error.message);
-  }
+export async function crearRegistro(table, data) {
+  const respuesta = await supabaseClient.from(table).insert(data);
+  return respuesta;
+}
+
+export async function actualizar(table, data, idColumna, idTabla) {
+  const respuesta = await supabaseClient
+    .from(table)
+    .update(data)
+    .eq(idColumna, idTabla);
+  return respuesta;
+}
+
+export async function eliminar(table, idColumna, idTabla) {
+  const respuesta = await supabaseClient
+    .from(table)
+    .delete()
+    .eq(idColumna, idTabla);
+  return respuesta;
+}
+
+export async function consumir_funcion(nombre_funcion, parametros) {
+  const respuesta = await supabaseClient.rpc(nombre_funcion, parametros);
+  return respuesta;
 }

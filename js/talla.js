@@ -1,19 +1,19 @@
-import { listar } from "../supabase/operaciones.js";
+import { listarDatos } from "../supabase/operaciones.js";
 
-const dataTallas = await listar("talla", "idtalla");
-console.log(dataTallas);
+async function cargarTallas() {
+  const dataTallas = await listarDatos("talla", "idtalla", "*");
 
-function mostrarTallas() {
-  const { data: tallas, error } = dataTallas;
-  if (error) {
-    alert("Error al cargar las tallas");
-    return;
-  }
-  const tbody = document.querySelector(".table__body");
-  tbody.innerHTML = "";
-  tallas.forEach((talla) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+  function mostrarTallas() {
+    const { data: tallas, error } = dataTallas;
+    if (error) {
+      alert("Error al cargar las tallas");
+      return;
+    }
+    const tbody = document.querySelector(".table__body");
+    tbody.innerHTML = "";
+    tallas.forEach((talla) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
       <td class="table__cell">${talla.idtalla}</td>
         <td class="table__cell">${talla.numero}</td>
         <td class="table__cell">${
@@ -38,9 +38,12 @@ function mostrarTallas() {
         </button>
       </td>
     `;
-    tr.classList.add("table__row");
-    tbody.appendChild(tr);
-  });
+      tr.classList.add("table__row");
+      tbody.appendChild(tr);
+    });
+  }
+
+  mostrarTallas();
 }
 
-mostrarTallas();
+cargarTallas();

@@ -1,431 +1,314 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proveedores</title>
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/admin.css" />
-    <link
-      rel="shortcut icon"
-      href="../img/logo-isidora.png"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
-    <div class="menu">
-      <ion-icon name="menu-outline"></ion-icon>
-      <ion-icon name="close-outline"></ion-icon>
-    </div>
 
-    <div class="barra-lateral">
-      <div>
-        <div class="nombre-pagina">
-          <img
-            id="logoHeader"
-            src="../img/logo-isidora.png"
-            alt="Logo Novedades Isidora"
-          />
-          <span>Novedades Isidora</span>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proveedores</title>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="shortcut icon" href="../img/logo-isidora.png" type="image/x-icon" />
+</head>
 
-      <nav class="navegacion">
-        <ul>
-          <li>
-            <a href="stock.html">
-              <ion-icon name="storefront-outline"></ion-icon>
-              <span>Stock</span>
-            </a>
-          </li>
-          <li>
-            <a href="venta.html">
-              <ion-icon name="cash-outline"></ion-icon>
-              <span>Ventas</span>
-            </a>
-          </li>
-          <li>
-            <a href="compra.html">
-              <ion-icon name="cart-outline"></ion-icon>
-              <span>Compras</span>
-            </a>
-          </li>
-          <li>
-            <a id="pagina-actual" href="proveedor.html">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-truck"
-                width="25"
-                height="25"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="#2c3e50"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                <path
-                  d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                />
-              </svg>
-              <span>Proveedores</span>
-            </a>
-          </li>
-          <li>
-            <a href="cliente.html">
-              <ion-icon name="people-outline"></ion-icon>
-              <span>Clientes</span>
-            </a>
-          </li>
-          <li>
-            <a href="productos.html">
-              <ion-icon name="cube-outline"></ion-icon>
-              <span>Productos</span>
-            </a>
-          </li>
-          <li>
-            <a href="categoria.html">
-              <ion-icon name="grid-outline"></ion-icon>
-              <span>Categorias</span>
-            </a>
-          </li>
-          <li>
-            <a href="talla.html">
-              <ion-icon name="swap-vertical-outline"></ion-icon>
-              <span>Tallas</span>
-            </a>
-          </li>
-          <li>
-            <a href="color.html">
-              <ion-icon name="color-palette-outline"></ion-icon>
-              <span>Colores</span>
-            </a>
-          </li>
-          <li>
-            <a href="marca.html">
-              <ion-icon name="checkmark-circle-outline"></ion-icon>
-              <span>Marcas</span>
-            </a>
-          </li>
-          <li>
-            <a href="../index.html">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-logout-2"
-                width="25"
-                height="25"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"
-                />
-                <path d="M15 12h-12l3 -3" />
-                <path d="M6 15l-3 -3" />
-              </svg>
-              <span>Cerrar Sesión</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<body>
+  <div class="menu">
+    <ion-icon name="menu-outline"></ion-icon>
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
 
-      <div>
-        <div class="linea"></div>
-
-        <div class="modo-oscuro">
-          <div class="info">
-            <ion-icon name="moon-outline"></ion-icon>
-            <span>Dark Mode</span>
-          </div>
-          <div class="switch">
-            <div class="base">
-              <div class="circulo"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="usuario">
-          <img src="../img/angel.jpg" alt="logo" />
-          <div class="info-usuario">
-            <div class="nombre-email">
-              <span class="nombre">Angel</span>
-              <span class="email">angel@gmail.com</span>
-            </div>
-            <ion-icon
-              id="cerrarSesion"
-              name="ellipsis-vertical-outline"
-            ></ion-icon>
-          </div>
-        </div>
+  <div class="barra-lateral">
+    <div>
+      <div class="nombre-pagina">
+        <img id="logoHeader" src="../img/logo-isidora.png" alt="Logo Novedades Isidora" />
+        <span>Novedades Isidora</span>
       </div>
     </div>
 
-    <main class="main">
-      <section class="section">
-        <h2 class="section__title">Proveedores</h2>
-        <div class="button">
-          <button class="button__add">Agregar Proveedor</button>
+    <nav class="navegacion">
+      <ul>
+        <li>
+          <a href="stock.html">
+            <ion-icon name="storefront-outline"></ion-icon>
+            <span>Stock</span>
+          </a>
+        </li>
+        <li>
+          <a href="venta.html">
+            <ion-icon name="cash-outline"></ion-icon>
+            <span>Ventas</span>
+          </a>
+        </li>
+        <li>
+          <a href="compra.html">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span>Compras</span>
+          </a>
+        </li>
+        <li>
+          <a id="pagina-actual" href="proveedor.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="25" height="25"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+            </svg>
+            <span>Proveedores</span>
+          </a>
+        </li>
+        <li>
+          <a href="cliente.html">
+            <ion-icon name="people-outline"></ion-icon>
+            <span>Clientes</span>
+          </a>
+        </li>
+        <li>
+          <a href="productos.html">
+            <ion-icon name="cube-outline"></ion-icon>
+            <span>Productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="categoria.html">
+            <ion-icon name="grid-outline"></ion-icon>
+            <span>Categorias</span>
+          </a>
+        </li>
+        <li>
+          <a href="talla.html">
+            <ion-icon name="swap-vertical-outline"></ion-icon>
+            <span>Tallas</span>
+          </a>
+        </li>
+        <li>
+          <a href="color.html">
+            <ion-icon name="color-palette-outline"></ion-icon>
+            <span>Colores</span>
+          </a>
+        </li>
+        <li>
+          <a href="marca.html">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <span>Marcas</span>
+          </a>
+        </li>
+        <li>
+          <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="25" height="25"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+              <path d="M15 12h-12l3 -3" />
+              <path d="M6 15l-3 -3" />
+            </svg>
+            <span>Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="linea"></div>
+
+      <div class="modo-oscuro">
+        <div class="info">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span>Dark Mode</span>
         </div>
-        <table class="table">
-          <thead class="table__head">
-            <tr class="table__row">
-              <th class="table__head-cell">ID</th>
-              <th class="table__head-cell">Nombre</th>
-              <th class="table__head-cell">Apellidos</th>
-              <th class="table__head-cell">Correo</th>
-              <th class="table__head-cell">Edad</th>
-              <th class="table__head-cell">Sexo</th>
-              <th class="table__head-cell">Teléfono</th>
-              <th class="table__head-cell">Dirección</th>
-              <th class="table__head-cell">Acciones</th>
-            </tr>
-          </thead>
-          <tbody class="table__body">
-            <tr class="table__row">
-              <td class="table__cell">1</td>
-              <td class="table__cell">Juan</td>
-              <td class="table__cell">Pérez</td>
-              <td class="table__cell">jperez@gmail.com</td>
-              <td class="table__cell">25</td>
-              <td class="table__cell">Masculino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">2</td>
-              <td class="table__cell">María</td>
-              <td class="table__cell">Gómez</td>
-              <td class="table__cell">mgomez@gmail.com</td>
-              <td class="table__cell">30</td>
-              <td class="table__cell">Femenino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">3</td>
-              <td class="table__cell">Pedro</td>
-              <td class="table__cell">Martínez</td>
-              <td class="table__cell">pmartinez@gmail.com</td>
-              <td class="table__cell">30</td>
-              <td class="table__cell">Masculino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">4</td>
-              <td class="table__cell">Ana</td>
-              <td class="table__cell">López</td>
-              <td class="table__cell">alopez@gmail.com</td>
-              <td class="table__cell">24</td>
-              <td class="table__cell">Femenino</td>
-              <td class="table__cell">987654421</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">5</td>
-              <td class="table__cell">Luis</td>
-              <td class="table__cell">Rodríguez</td>
-              <td class="table__cell">lrodriguez@gmail.com</td>
-              <td class="table__cell">25</td>
-              <td class="table__cell">Masculino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">6</td>
-              <td class="table__cell">Sara</td>
-              <td class="table__cell">García</td>
-              <td class="table__cell">sgarcia@gmail.com</td>
-              <td class="table__cell">25</td>
-              <td class="table__cell">Femenino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">7</td>
-              <td class="table__cell">Carlos</td>
-              <td class="table__cell">Hernández</td>
-              <td class="table__cell">chernandez@gmail.com</td>
-              <td class="table__cell">25</td>
-              <td class="table__cell">Masculino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">8</td>
-              <td class="table__cell">Laura</td>
-              <td class="table__cell">Fernández</td>
-              <td class="table__cell">lfernandez@gmail.com</td>
-              <td class="table__cell">36</td>
-              <td class="table__cell">Femenino</td>
-              <td class="table__cell">987654321</td>
-              <td class="table__cell">Av. Los Pinos 123</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="../js/theme.js"></script>
-    <script src="../js/mode.js"></script>
-  </body>
+        <div class="switch">
+          <div class="base">
+            <div class="circulo"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usuario">
+        <img src="../img/angel.jpg" alt="logo" />
+        <div class="info-usuario">
+          <div class="nombre-email">
+            <span class="nombre">Angel</span>
+            <span class="email">angel@gmail.com</span>
+          </div>
+          <ion-icon id="cerrarSesion" name="ellipsis-vertical-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <section class="section">
+      <h2 class="section__title">Proveedores</h2>
+      <div class="button">
+        <button class="button__add">Agregar Proveedor</button>
+      </div>
+      <table class="table">
+        <thead class="table__head">
+          <tr class="table__row">
+            <th class="table__head-cell">ID</th>
+            <th class="table__head-cell">Nombre</th>
+            <th class="table__head-cell">Apellidos</th>
+            <th class="table__head-cell">Correo</th>
+            <th class="table__head-cell">Teléfono</th>
+            <th class="table__head-cell">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+          <!-- <tr class="table__row">
+            <td class="table__cell">1</td>
+            <td class="table__cell">Juan</td>
+            <td class="table__cell">Pérez</td>
+            <td class="table__cell">jperez@gmail.com</td>
+            <td class="table__cell">25</td>
+            <td class="table__cell">Masculino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">2</td>
+            <td class="table__cell">María</td>
+            <td class="table__cell">Gómez</td>
+            <td class="table__cell">mgomez@gmail.com</td>
+            <td class="table__cell">30</td>
+            <td class="table__cell">Femenino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">3</td>
+            <td class="table__cell">Pedro</td>
+            <td class="table__cell">Martínez</td>
+            <td class="table__cell">pmartinez@gmail.com</td>
+            <td class="table__cell">30</td>
+            <td class="table__cell">Masculino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">4</td>
+            <td class="table__cell">Ana</td>
+            <td class="table__cell">López</td>
+            <td class="table__cell">alopez@gmail.com</td>
+            <td class="table__cell">24</td>
+            <td class="table__cell">Femenino</td>
+            <td class="table__cell">987654421</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">5</td>
+            <td class="table__cell">Luis</td>
+            <td class="table__cell">Rodríguez</td>
+            <td class="table__cell">lrodriguez@gmail.com</td>
+            <td class="table__cell">25</td>
+            <td class="table__cell">Masculino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">6</td>
+            <td class="table__cell">Sara</td>
+            <td class="table__cell">García</td>
+            <td class="table__cell">sgarcia@gmail.com</td>
+            <td class="table__cell">25</td>
+            <td class="table__cell">Femenino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">7</td>
+            <td class="table__cell">Carlos</td>
+            <td class="table__cell">Hernández</td>
+            <td class="table__cell">chernandez@gmail.com</td>
+            <td class="table__cell">25</td>
+            <td class="table__cell">Masculino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell">8</td>
+            <td class="table__cell">Laura</td>
+            <td class="table__cell">Fernández</td>
+            <td class="table__cell">lfernandez@gmail.com</td>
+            <td class="table__cell">36</td>
+            <td class="table__cell">Femenino</td>
+            <td class="table__cell">987654321</td>
+            <td class="table__cell">Av. Los Pinos 123</td>
+            <td class="table__cell">
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/edit--v1.png" alt="edit--v1" />
+              </button>
+              <button class="table__button">
+                <img width="25" height="25" src="https://img.icons8.com/color/48/delete.png" alt="delete" />
+              </button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/mode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script type="module" src="../js/proveedor.js"></script>
+</body>
+
 </html>

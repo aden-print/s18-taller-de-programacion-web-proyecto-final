@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/admin.css" />
   </head>
+
   <body>
     <div class="menu">
       <ion-icon name="menu-outline"></ion-icon>
@@ -174,22 +175,34 @@
         <div class="button">
           <button class="button__add">Agregar Cliente</button>
         </div>
+        <div class="search">
+          <div class="barra-busqueda">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Buscar cliente"
+              name="buscar"
+            />
+            <span class="search__button">
+              <ion-icon name="search-outline">a</ion-icon>
+            </span>
+          </div>
+        </div>
         <table class="table">
           <thead class="table__head">
             <tr class="table__row">
               <th class="table__head-cell">ID</th>
               <th class="table__head-cell">Nombre</th>
               <th class="table__head-cell">Apellidos</th>
+              <th class="table__head-cell">DNI</th>
               <th class="table__head-cell">Correo</th>
-              <th class="table__head-cell">Edad</th>
-              <th class="table__head-cell">Sexo</th>
               <th class="table__head-cell">Teléfono</th>
               <th class="table__head-cell">Dirección</th>
               <th class="table__head-cell">Acciones</th>
             </tr>
           </thead>
           <tbody class="table__body">
-            <tr class="table__row">
+            <!-- <tr class="table__row">
               <td class="table__cell">1</td>
               <td class="table__cell">Juan</td>
               <td class="table__cell">Pérez</td>
@@ -412,7 +425,7 @@
                   />
                 </button>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </section>
@@ -427,5 +440,7 @@
     ></script>
     <script src="../js/theme.js"></script>
     <script src="../js/mode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="module" src="../js/cliente.js"></script>
   </body>
 </html>
