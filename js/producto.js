@@ -1,4 +1,4 @@
-import { listarDatos , crearRegistro } from "../supabase/operaciones.js";
+import { listarDatos, crearRegistro } from "../supabase/operaciones.js";
 
 const modal = document.querySelector(".modal-agregar");
 const mostrarModal = document.querySelector(".button__add");
@@ -10,7 +10,7 @@ const idcategoria = document.querySelector("#idcategoria");
 const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
-const data = { nombre: "" , descripcion: "", idcategoria: ""};
+const data = { nombre: "", descripcion: "", idcategoria: "" };
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
@@ -55,7 +55,7 @@ async function cargarProductos() {
         producto.descripcion ? producto.descripcion : ""
       }</td>
       <td class="table__cell">
-        <button class="table__button">
+        <button class="table__edit">
           <img
             width="25"
             height="25"
@@ -63,7 +63,7 @@ async function cargarProductos() {
             alt="edit--v1"
           />
         </button>
-        <button class="table__button">
+        <button class="table__delete">
           <img
             width="25"
             height="25"
@@ -111,7 +111,6 @@ function limpiarFormulario() {
   nombreProducto.value = "";
   descripcion.value = "";
   idcategoria.value = "";
-  
 }
 
 function limpiarData() {
@@ -125,12 +124,11 @@ idcategoria.addEventListener("change", leerInput);
 
 function leerInput(e) {
   data[e.target.id] = e.target.value;
-
 }
 
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
-  const { nombre ,  idcategoria} = data;
+  const { nombre, idcategoria } = data;
   if (nombre.trim() === "") {
     alert("El campo nombre no puede estar vacio");
     return;

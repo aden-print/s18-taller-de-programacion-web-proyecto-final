@@ -25,7 +25,7 @@ async function cargarCompras() {
       <td class="table__cell"> S/ ${compra.totalimpuesto}</td>
       <td class="table__cell"> S/ ${compra.total}</td>
       <td class="table__cell">
-        <button class="table__button">
+        <button class="table__edit">
           <img
             width="25"
             height="25"
@@ -33,7 +33,7 @@ async function cargarCompras() {
             alt="edit--v1"
           />
         </button>
-        <button class="table__button">
+        <button class="table__detele">
           <img
             width="25"
             height="25"

@@ -25,7 +25,7 @@ function mostrarClientes() {
         <td class="table__cell">${cliente.persona.telefono}</td>
         <td class="table__cell">${cliente.direccion}</td>
         <td class="table__cell">
-            <button class="table__button">
+            <button class="table__edit">
             <img
                 width="25"
                 height="25"
@@ -33,7 +33,7 @@ function mostrarClientes() {
                 alt="edit--v1"
             />
             </button>
-            <button class="table__button">
+            <button class="table__delete">
             <img
                 width="25"
                 height="25"

@@ -49,7 +49,7 @@ async function cargarTallas() {
           talla.descripcion ? talla.descripcion : ""
         }</td>
         <td class="table__cell">
-        <button class="table__button">
+        <button class="table__edit">
           <img
             width="25"
             height="25"
@@ -57,7 +57,7 @@ async function cargarTallas() {
             alt="edit--v1"
           />
         </button>
-        <button class="table__button">
+        <button class="table__delete">
           <img
             width="25"
             height="25"

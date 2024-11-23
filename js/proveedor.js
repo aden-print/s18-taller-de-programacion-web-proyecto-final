@@ -31,7 +31,6 @@ btnCancelar.addEventListener("click", (e) => {
   modal.classList.remove("modal-show");
 });
 
-
 async function cargarProveedores() {
   const dataProveedores = await listarDatos(
     "proveedor",
@@ -56,7 +55,7 @@ async function cargarProveedores() {
           <td class="table__cell">${proveedor.persona.correo}</td>
           <td class="table__cell">${proveedor.persona.telefono}</td>
           <td class="table__cell">
-              <button class="table__button">
+              <button class="table__edit">
               <img
                   width="25"
                   height="25"
@@ -64,7 +63,7 @@ async function cargarProveedores() {
                   alt="edit--v1"
               />
               </button>
-              <button class="table__button">
+              <button class="table__delete">
               <img
                   width="25"
                   height="25"
@@ -96,7 +95,6 @@ apelldoProveedor.addEventListener("input", leerInput);
 
 function leerInput(e) {
   data[e.target.id] = e.target.value;
-
 }
 
 btnAgregar.addEventListener("click", async (e) => {
@@ -107,7 +105,12 @@ btnAgregar.addEventListener("click", async (e) => {
     p_correo: correoProveedor.value,
     p_telefono: telefonoProveedor.value,
   };
-  if (!data.p_nombres || !data.p_apellidos || !data.p_correo || !data.p_telefono) {
+  if (
+    !data.p_nombres ||
+    !data.p_apellidos ||
+    !data.p_correo ||
+    !data.p_telefono
+  ) {
     mensajeAgregar.textContent = "Todos los campos son obligatorios";
     mensajeAgregar.classList.add("mensaje-error");
     return;
@@ -115,7 +118,7 @@ btnAgregar.addEventListener("click", async (e) => {
 
   // console.log(data);
   // return;
-  
+
   const respuesta = await consumir_funcion("insert_persona_proveedor", data);
   if (respuesta.error) {
     mensajeAgregar.textContent = "Error al agregar el proveedor";
@@ -129,8 +132,8 @@ btnAgregar.addEventListener("click", async (e) => {
     mensajeAgregar.textContent = "";
     mensajeAgregar.classList.remove("mensaje-exito");
     modal.classList.remove("modal-show");
-  cargarProveedores();
-  limpiarFormulario();
+    cargarProveedores();
+    limpiarFormulario();
   }, 4000);
 });
 
