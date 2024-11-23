@@ -380,6 +380,57 @@
           </tbody>
         </table>
       </section>
+      <section class="modal-agregar">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-title">Crear Producto</h3>
+            <span class="modal-close">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </span>
+          </div>
+          <div class="modal-body">
+            <form class="form-agregar">
+              </div>
+              <div class="form-campos">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-nombre"
+                  placeholder="Nombre de la categoria"
+                  required
+                />
+              </div>
+              <div class="form-campos">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <input
+                  type="text"
+                  id="descripcion"
+                  name="descripcion"
+                  class="form-descripcion"
+                  placeholder="Descripción del producto"
+                />
+              </div>
+              <div class="form-campos">
+                <label for="idcategoria" class="form-label">Categoria:</label>
+                <select
+                  id="idcategoria"
+                  name="idcategoria"
+                  class="form-categoria"
+                  required
+                >
+                  <!-- <option value="">Seleccione una categoria</option> -->
+                </select>
+              <div class="form-botones">
+                <input type="submit" class="btn-agregar" value="Guardar" />
+                <a href="#" class="btn-cancelar">Cancelar</a>
+              </div>
+              <p class="mensaje-agregar red"></p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <script
       type="module"
