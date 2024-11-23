@@ -189,6 +189,70 @@
           <tbody class="table__body"></tbody>
         </table>
       </section>
+      <section class="modal-agregar">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-title">Crear Proveedor</h3>
+            <span class="modal-close">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </span>
+          </div>
+          <div class="modal-body">
+            <form class="form-agregar">
+              <div class="form-campos">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="p_nombre"
+                  class="form-input"
+                  placeholder="Nombre del proveedor"
+                  required
+                />
+              </div>
+              <div class="form-campos">
+                <label for="apelldo" class="form-label">Apellidos:</label>
+                <input
+                  type="text"
+                  id="apellido"
+                  name="p_apellido"
+                  class="form-input"
+                  placeholder="Apellido del proveedor"
+                  required
+                />
+              </div>
+              <div class="form-campos">
+                <label for="correo" class="form-label">Correo:</label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="p_correo"
+                  class="form-input"
+                  placeholder="correo del proveedor"
+                  required
+                />
+              </div>
+              <div class="form-campos">
+                <label for="telefono" class="form-label">Telefono:</label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="p_telefono"
+                  class="form-input"
+                  placeholder="Telefono del proveedor"
+                  pattern="[0-9]{9}"
+                  required
+                />
+              </div>
+              <div class="form-botones">
+                <input type="submit" class="btn-agregar" value="Guardar" />
+                <a href="#" class="btn-cancelar">Cancelar</a>
+              </div>
+              <p class="mensaje-agregar red"></p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <script
       type="module"
