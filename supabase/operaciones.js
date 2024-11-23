@@ -28,3 +28,8 @@ export async function eliminar(table, idColumna, idTabla) {
     .eq(idColumna, idTabla);
   return respuesta;
 }
+
+export async function consumir_funcion(nombre_funcion, parametros) {
+  const respuesta = await supabaseClient.rpc(nombre_funcion, parametros);
+  return respuesta;
+}

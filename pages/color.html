@@ -182,141 +182,38 @@
               <th class="table__head-cell">Acciones</th>
             </tr>
           </thead>
-          <tbody class="table__body">
-            <!-- <tr class="table__row">
-              <td class="table__cell">1</td>
-              <td class="table__cell">Zapatos</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">2</td>
-              <td class="table__cell">Zapatillas</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">3</td>
-              <td class="table__cell">Botas</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="table__cell">4</td>
-              <td class="table__cell">Crema</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="table__cell">5</td>
-              <td class="table__cell">Tacos</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td class="table__cell">6</td>
-              <td class="table__cell">Rojo</td>
-              <td class="table__cell">
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/edit--v1.png"
-                    alt="edit--v1"
-                  />
-                </button>
-                <button class="table__button">
-                  <img
-                    width="25"
-                    height="25"
-                    src="https://img.icons8.com/color/48/delete.png"
-                    alt="delete"
-                  />
-                </button>
-              </td>
-            </tr> -->
-          </tbody>
+          <tbody class="table__body"></tbody>
         </table>
+      </section>
+      <section class="modal-agregar">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-title">Crear Color</h3>
+            <span class="modal-close">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </span>
+          </div>
+          <div class="modal-body">
+            <form class="form-agregar" autocomplete="off">
+              <div class="form-campos">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-nombre"
+                  placeholder="Nombre del color"
+                  required
+                />
+              </div>
+              <div class="form-botones">
+                <input type="submit" class="btn-agregar" value="Guardar" />
+                <a href="#" class="btn-cancelar">Cancelar</a>
+              </div>
+              <p class="mensaje-agregar red"></p>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
     <script
