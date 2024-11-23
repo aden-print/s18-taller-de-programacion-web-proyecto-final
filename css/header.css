@@ -21,14 +21,14 @@ header img {
   margin-right: 20px;
 }
 
-nav {
+.navegacion {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
 
-nav ul {
+.navegacion ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -36,11 +36,11 @@ nav ul {
   gap: 20px;
 }
 
-nav ul li {
+.navegacion ul li {
   margin: 0;
 }
 
-nav ul li a {
+.navegacion ul li a {
   color: black;
   text-decoration: none;
   padding: 10px 15px;
@@ -49,7 +49,7 @@ nav ul li a {
   text-align: center;
 }
 
-nav ul li a:hover {
+.navegacion ul li a:hover {
   border-bottom: 2px solid black;
 }
 
@@ -60,11 +60,38 @@ nav ul li a:hover {
 }
 
 @media (max-width: 890px) {
-  nav ul {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navegacion {
+    display: none;
+  }
+
+  .mostrarActiva {
+    display: block;
+  }
+
+  .navegacion.mostrarActiva {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(250px, 100%);
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+  .navegacion ul {
     flex-direction: column;
   }
 }
-
 
 /*menu amburgesa*/
 /* Estilos para el menú hamburguesa */
@@ -82,37 +109,37 @@ nav ul li a:hover {
   transition: 0.4s;
 }
 
-nav ul {
+.navegacion ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
+.navegacion ul li {
   margin: 0 10px;
 }
 
-nav ul li a {
+.navegacion ul li a {
   text-decoration: none;
   color: black;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .menu-toggle {
     display: flex;
   }
 
-  nav ul {
+  .navegacion ul {
     display: none;
     flex-direction: column;
     width: 100%;
   }
 
-  nav ul li {
+  .navegacion ul li {
     text-align: center;
     margin: 10px 0;
   }
 
-  nav ul.showing {
+  .navegacion ul.showing {
     display: flex;
   }
 }
@@ -146,4 +173,3 @@ nav ul li a {
   text-decoration: none;
   border-radius: 5px;
 }
-
