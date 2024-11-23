@@ -520,6 +520,15 @@ th {
   transition: opacity 0.6s;
 }
 
+.modal-agregar {
+  overflow-y: auto;
+}
+
+.modal-agregar::-webkit-scrollbar {
+  width: 10px;
+  height: 2px;
+}
+
 .modal-show {
   opacity: 1;
   pointer-events: unset;
@@ -529,7 +538,7 @@ th {
 .modal-container {
   width: 55%;
   padding: 20px;
-  margin: 80px auto 0 auto;
+  margin: 30px auto;
   background-color: #f1f1f1;
 }
 
