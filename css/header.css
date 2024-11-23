@@ -64,3 +64,86 @@ nav ul li a:hover {
     flex-direction: column;
   }
 }
+
+
+/*menu amburgesa*/
+/* Estilos para el menú hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  nav ul.showing {
+    display: flex;
+  }
+}
+
+/* Estilos adicionales */
+.content {
+  padding: 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+}
+
+.service-item h3 {
+  text-align: center;
+}
+
+.botones a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
