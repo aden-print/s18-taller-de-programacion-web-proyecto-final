@@ -54,8 +54,6 @@ btnSi.addEventListener("click", async (e) => {
 });
 
 btnNo.addEventListener("click", (e) => {
-  console.log("click");
-
   e.preventDefault();
   modal.classList.remove("modal-show");
 });
