@@ -391,7 +391,9 @@ main.min-main {
 }
 
 .button__add,
+.button__regresar,
 .form-botones .btn-agregar,
+.form-botones .btn-editar,
 .form-botones .btn-cancelar {
   background-color: #4caf50;
   border: none;
@@ -403,6 +405,12 @@ main.min-main {
   font-size: 18px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.button__regresar {
+  background-color: #3005ee;
+  text-decoration: none;
+  padding: 15px;
 }
 
 .button__add:hover {
@@ -490,7 +498,9 @@ th {
 
 .table__cell .table__delete,
 .table__cell .table__edit {
-  border: none;
+  display: inline-block;
+  width: 90px;
+  text-decoration: none;
   border-radius: 5px;
   color: white;
   padding: 10px 15px;
@@ -579,16 +589,19 @@ th {
   margin: 0 auto;
 }
 
-.form-agregar {
+.form-agregar,
+.form-editar {
   display: grid;
   gap: 20px;
 }
 
-.form-agregar .form-label {
+.form-agregar .form-label,
+.form-editar .form-label {
   font-size: 20px;
 }
 
-.form-agregar .form-input {
+.form-agregar .form-input,
+.form-editar .form-input {
   width: 100%;
   font-size: 18px;
   border: 1px solid var(--color-border-tabla);
@@ -604,6 +617,7 @@ th {
 }
 
 .form-botones .btn-agregar,
+.form-botones .btn-editar,
 .form-botones .btn-cancelar {
   padding: 10px 20px;
   font-weight: 500;
