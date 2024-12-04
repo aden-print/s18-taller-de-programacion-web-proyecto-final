@@ -394,7 +394,8 @@ main.min-main {
 .button__regresar,
 .form-botones .btn-agregar,
 .form-botones .btn-editar,
-.form-botones .btn-cancelar {
+.form-botones .btn-cancelar,
+.form-botones .btn-eliminar {
   background-color: #4caf50;
   border: none;
   border-radius: 5px;
@@ -590,18 +591,21 @@ th {
 }
 
 .form-agregar,
-.form-editar {
+.form-editar,
+.form-eliminar {
   display: grid;
   gap: 20px;
 }
 
 .form-agregar .form-label,
-.form-editar .form-label {
+.form-editar .form-label,
+.form-eliminar .form-label {
   font-size: 20px;
 }
 
 .form-agregar .form-input,
-.form-editar .form-input {
+.form-editar .form-input,
+.form-eliminar .form-input {
   width: 100%;
   font-size: 18px;
   border: 1px solid var(--color-border-tabla);
@@ -617,13 +621,16 @@ th {
 }
 
 .form-botones .btn-agregar,
+.form-botones .btn-cancelar,
 .form-botones .btn-editar,
-.form-botones .btn-cancelar {
+.form-botones .btn-eliminar {
   padding: 10px 20px;
   font-weight: 500;
 }
 
-.form-botones .btn-agregar:hover {
+.form-botones .btn-agregar:hover,
+.form-botones .btn-editar:hover,
+.form-botones .btn-eliminar:hover {
   background-color: #45a049;
 }
 
@@ -637,37 +644,27 @@ th {
 }
 
 .form-botones .btn-agregar:hover,
+.form-botones .btn-editar:hover,
+.form-botones .btn-eliminar:hover,
 .form-botones .btn-cancelar:hover {
   color: #000;
 }
 
-.mensaje-agregar {
+.mensaje-agregar,
+.mensaje-editar,
+.mensaje-eliminar {
   margin-top: 5px;
   font-size: 18px;
   font-weight: 500;
   color: #4caf50;
 }
 
-.mensaje-agregar.red {
+.mensaje-agregar.red,
+.mensaje-editar.red,
+.mensaje-eliminar.red {
   color: #f44336;
 }
 /* Fin modal agregar */
-
-/* Inicio modal editar */
-.modal-editar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #111111bd;
-  z-index: 200;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s;
-}
-
-/* Fin modal editar */
 
 /* Fin main */
 
