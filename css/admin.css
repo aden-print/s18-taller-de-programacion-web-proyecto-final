@@ -395,7 +395,8 @@ main.min-main {
 .form-botones .btn-agregar,
 .form-botones .btn-editar,
 .form-botones .btn-cancelar,
-.form-botones .btn-eliminar {
+.form-botones .btn-eliminar,
+.form-botones .btn-no {
   background-color: #4caf50;
   border: none;
   border-radius: 5px;
@@ -623,7 +624,8 @@ th {
 .form-botones .btn-agregar,
 .form-botones .btn-cancelar,
 .form-botones .btn-editar,
-.form-botones .btn-eliminar {
+.form-botones .btn-eliminar,
+.form-botones .btn-no {
   padding: 10px 20px;
   font-weight: 500;
 }
@@ -634,19 +636,22 @@ th {
   background-color: #45a049;
 }
 
-.form-botones .btn-cancelar {
+.form-botones .btn-cancelar,
+.form-botones .btn-no {
   background-color: #f44336;
   text-decoration: none;
 }
 
-.form-botones .btn-cancelar:hover {
+.form-botones .btn-cancelar:hover,
+.form-botones .btn-no:hover {
   background-color: #f02112;
 }
 
 .form-botones .btn-agregar:hover,
 .form-botones .btn-editar:hover,
 .form-botones .btn-eliminar:hover,
-.form-botones .btn-cancelar:hover {
+.form-botones .btn-cancelar:hover,
+.form-botones .btn-no:hover {
   color: #000;
 }
 
