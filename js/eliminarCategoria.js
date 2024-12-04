@@ -1,11 +1,13 @@
 import { obtenerRegistro, eliminar } from "../supabase/operaciones.js";
 
 const queryParams = window.location.search;
+const modal = document.querySelector(".modal-agregar");
 const inputId = document.querySelector("#id");
 const inputCategoria = document.querySelector("#nombre");
-const formularioEliminar = document.querySelector(".form-eliminar");
 const btnDelete = document.querySelector(".btn-eliminar");
 const mensajeEliminar = document.querySelector(".mensaje-eliminar");
+const btnSi = document.querySelector(".btn-agregar");
+const btnNo = document.querySelector(".btn-no");
 
 const urlParams = new URLSearchParams(queryParams);
 const idCategoria = urlParams.get("id");
@@ -26,9 +28,8 @@ async function cargarCategoria() {
 
 cargarCategoria();
 
-formularioEliminar.addEventListener("submit", async (e) => {
+btnSi.addEventListener("click", async (e) => {
   e.preventDefault();
-  btnDelete.disabled = true;
   const { error } = await eliminar("categoria", "idcategoria", idCategoria);
   btnDelete.value = "Eliminando...";
   if (error) {
@@ -49,4 +50,17 @@ formularioEliminar.addEventListener("submit", async (e) => {
   setTimeout(() => {
     window.location.href = "categoria.html";
   }, 4000);
+  modal.classList.remove("modal-show");
+});
+
+btnNo.addEventListener("click", (e) => {
+  console.log("click");
+
+  e.preventDefault();
+  modal.classList.remove("modal-show");
+});
+
+btnDelete.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.classList.add("modal-show");
 });
