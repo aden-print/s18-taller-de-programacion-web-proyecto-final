@@ -35,7 +35,7 @@ async function cargarCategorias() {
   function mostrarCategorias() {
     const { data: categorias, error } = dataCategorias;
     if (error) {
-      alert("Error al cargar las categorias");
+      console.log("Error al cargar las categorias");
       return;
     }
     const tbody = document.querySelector(".table__body");
@@ -50,7 +50,7 @@ async function cargarCategorias() {
           <a href="editarcategoria.html?id=${categoria.idcategoria}" class="table__edit" value="${categoria.idcategoria}">
             Editar
           </a>
-          <a href="eliminar.html?id=${categoria.idcategoria}"class="table__delete" value="${categoria.idcategoria}">
+          <a href="eliminarcategoria.html?id=${categoria.idcategoria}"class="table__delete" value="${categoria.idcategoria}">
             Eliminar
           </a>
         </td>
@@ -78,17 +78,24 @@ function leerInput(e) {
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
   const { nombre } = data;
+  btnAgregar.disabled = true;
   if (nombre.trim() === "") {
     alert("El campo nombre no puede estar vacio");
     return;
   }
 
   btnAgregar.value = "Guardando...";
-  const respuesta = await crearRegistro("categoria", data);
-  console.log(respuesta);
+  const { error } = await crearRegistro("categoria", data);
 
-  if (respuesta.error) {
+  if (error) {
+    btnAgregar.disabled = false;
     alert("Error al agregar la categoria");
+    btnAgregar.value = "Guardar";
+    if (error.code === "23505") {
+      mensajeAgregar.textContent =
+        "Error al crear el registro, ya existe la categoria con ese nombre.";
+      return;
+    }
     mensajeAgregar.textContent = "Error al agregar la categoria";
     return;
   }
