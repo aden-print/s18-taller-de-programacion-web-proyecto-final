@@ -9,6 +9,7 @@ const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
+let dataCategoria = [];
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
@@ -40,27 +41,18 @@ async function cargarCategorias() {
     const tbody = document.querySelector(".table__body");
     tbody.innerHTML = "";
     categorias.forEach((categoria) => {
+      dataCategoria = { ...dataCategoria, ...categoria };
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="table__cell">${categoria.idcategoria}</td>
           <td class="table__cell">${categoria.nombre}</td>
           <td class="table__cell">
-          <button class="table__edit" value="${categoria.idcategoria}">
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/color/48/edit--v1.png"
-              alt="edit--v1"
-            />
-          </button>
-          <button class="table__delete" value="${categoria.idcategoria}">
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/color/48/delete.png"
-              alt="delete"
-            />
-          </button>
+          <a href="editarcategoria.html?id=${categoria.idcategoria}" class="table__edit" value="${categoria.idcategoria}">
+            Editar
+          </a>
+          <a href="eliminar.html?id=${categoria.idcategoria}"class="table__delete" value="${categoria.idcategoria}">
+            Eliminar
+          </a>
         </td>
       `;
       tr.classList.add("table__row");
@@ -93,6 +85,8 @@ formAgregar.addEventListener("submit", async function (evento) {
 
   btnAgregar.value = "Guardando...";
   const respuesta = await crearRegistro("categoria", data);
+  console.log(respuesta);
+
   if (respuesta.error) {
     alert("Error al agregar la categoria");
     mensajeAgregar.textContent = "Error al agregar la categoria";
@@ -108,11 +102,3 @@ formAgregar.addEventListener("submit", async function (evento) {
     mensajeAgregar.textContent = "";
   }, 4000);
 });
-
-const btnEditar = document.querySelectorAll(".table__edit");
-const btnEliminar = document.querySelectorAll(".table__delete");
-console.log(btnEditar);
-console.log(btnEliminar);
-
-const btnEdit = document.querySelector(".table__edit");
-console.log(btnEdit);
