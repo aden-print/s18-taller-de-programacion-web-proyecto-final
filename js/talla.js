@@ -94,22 +94,30 @@ formAgregar.addEventListener("submit", async function (evento) {
     return;
   }
 
+  cargarTallas();
+
   btnAgregar.value = "Guardando...";
-  const respuesta = await crearRegistro("talla", data);
-  if (respuesta.error) {
-    alert("Error al agregar la talla");
-    mensajeAgregar.textContent = "Error al agregar la talla";
+  const { error } = await crearRegistro("talla", data);
+
+  if (error) {
+    btnAgregar.disabled = false;
+    alert("Error al agregar la categoria");
+    btnAgregar.value = "Guardar";
+    if (error.code === "23505") {
+      mensajeAgregar.textContent =
+        "Error al crear el registro, ya existe la este numero de talla";
+      return;
+    }
+    mensajeAgregar.textContent = "Error al agregar la ";
     return;
   }
   btnAgregar.value = "Guardar";
   mensajeAgregar.classList.remove("red");
-  mensajeAgregar.textContent = "Talla agregada correctamente";
+  mensajeAgregar.textContent = "La tallase  agregada correctamente";
   setTimeout(() => {
     modal.classList.remove("modal-show");
-    cargarTallas();
+    cargarCategorias();
     limpiarFormulario();
     mensajeAgregar.textContent = "";
   }, 4000);
 });
-
-cargarTallas();
