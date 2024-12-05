@@ -9,7 +9,7 @@ const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
-let dataCategoria = [];
+let nombresCategorias = [];
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
@@ -20,12 +20,14 @@ mostrarModal.addEventListener("click", (e) => {
 cerrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
 btnCancelar.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
@@ -41,7 +43,7 @@ async function cargarCategorias() {
     const tbody = document.querySelector(".table__body");
     tbody.innerHTML = "";
     categorias.forEach((categoria) => {
-      dataCategoria = { ...dataCategoria, ...categoria };
+      nombresCategorias.push(categoria.nombre.trim().toLowerCase());
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="table__cell">${categoria.idcategoria}</td>
@@ -78,9 +80,17 @@ function leerInput(e) {
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
   const { nombre } = data;
+  const nombreNormalizado = nombre.trim().toLowerCase();
   btnAgregar.disabled = true;
   if (nombre.trim() === "") {
     alert("El campo nombre no puede estar vacio");
+    return;
+  }
+
+  if (nombresCategorias.includes(nombreNormalizado)) {
+    mensajeAgregar.textContent =
+      "Error, ya existe la categoria con ese nombre.";
+    btnAgregar.disabled = false;
     return;
   }
 
@@ -93,7 +103,7 @@ formAgregar.addEventListener("submit", async function (evento) {
     btnAgregar.value = "Guardar";
     if (error.code === "23505") {
       mensajeAgregar.textContent =
-        "Error al crear el registro, ya existe la categoria con ese nombre.";
+        "Error, ya existe la categoria con ese nombre.";
       return;
     }
     mensajeAgregar.textContent = "Error al agregar la categoria";
@@ -107,5 +117,7 @@ formAgregar.addEventListener("submit", async function (evento) {
     cargarCategorias();
     limpiarFormulario();
     mensajeAgregar.textContent = "";
+    btnAgregar.disabled = false;
+    mensajeAgregar.classList.add("red");
   }, 4000);
 });
