@@ -65,7 +65,10 @@ export async function eliminar_archivo(nombre_archivo) {
 
 export async function listar_archivos() {
   const respuesta = await supabaseClient.storage
-    .from("nombre_de_bucket")
-    .list();
+    .from("imagenes-inicio")
+    .list("imagenes/inicio", {
+      limit: 100,
+      offset: 0,
+    });
   return respuesta;
 }
