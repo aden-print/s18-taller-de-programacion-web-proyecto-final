@@ -45,7 +45,7 @@ formularioEditar.addEventListener("submit", async (e) => {
     console.log(error);
     if (error.code === "23505") {
       mensajeEditar.textContent =
-        "Error al actualizar el registro, ya existe esa categoria.";
+        "Error al actualizar, ya existe esa categoria.";
     }
     btnEditar.disabled = false;
     btnEditar.value = "Guardar";
