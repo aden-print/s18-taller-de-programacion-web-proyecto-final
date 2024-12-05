@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registre un usuario</title>
+    <title>Crear Cuenta - Novedades Isidora</title>
     <link rel="stylesheet" href="../css/register.css" />
     <link
       rel="stylesheet"
@@ -14,7 +14,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <header>
       <a href="../index.html">
@@ -27,96 +26,75 @@
       </div>
       <nav class="navegacion">
         <ul id="menu">
-          <li>
-            <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
-          </li>
-          <li>
-            <a href="product.html"><i class="fas fa-box-open"></i> Productos</a>
-          </li>
-          <li>
-            <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
-          </li>
-          <li>
-            <a href="ubicacion.html"
-              ><i class="fas fa-map-marker-alt"></i> Ubicación</a
-            >
-          </li>
-          <li>
-            <a href="login.html"
-              ><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a
-            >
-          </li>
-          <li>
-            <a href="register.html"
-              ><i class="fas fa-user-plus"></i> Registrarse</a
-            >
-          </li>
+          <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="product.html"><i class="fas fa-box-open"></i> Productos</a></li>
+          <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+          <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+          <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+          <li><a href="register.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <div>
-        <form class="formulario" id="loginForm" method="POST">
-          <h1 class="titulo">CREAR CUENTA</h1>
-          <div class="nombre-apellido">
-            <div class="campo">
-              <label for="nombres">Nombres</label>
-              <input
-                type="text"
-                name="nombres"
-                placeholder="Ingrese sus nombres"
-                id="nombres"
-                required
-              />
-            </div>
-            <div class="campo">
-              <label for="apellidos">Apellidos</label>
-              <input
-                type="text"
-                name="apellidos"
-                id="apellidos"
-                placeholder="Ingrese sus apellidos"
-                required
-              />
-            </div>
-          </div>
+      <form class="formulario" id="registerForm" method="POST">
+        <h1 class="titulo">Crear Cuenta</h1>
+        <div class="nombre-apellido">
           <div class="campo">
-            <label for="correo">Correo electronico</label>
+            <label for="nombres">Nombres</label>
             <input
-              type="email"
-              name="correo"
-              id="correo"
-              placeholder="Ingrese su correo electronico"
+              type="text"
+              name="nombres"
+              id="nombres"
+              placeholder="Ingrese sus nombres"
               required
             />
           </div>
           <div class="campo">
-            <label for="contrasena">Contraseña</label>
+            <label for="apellidos">Apellidos</label>
             <input
-              type="password"
-              name="contrasena"
-              id="contrasena"
-              placeholder="Ingrese su contraseña"
+              type="text"
+              name="apellidos"
+              id="apellidos"
+              placeholder="Ingrese sus apellidos"
               required
             />
           </div>
-          <div class="terminos-condiciones">
-            <input type="checkbox" id="terminos" name="terminos" required />
-            <label for="terminos"
-              >Acepto los
-              <a href="terminos.html">términos y condiciones</a></label
-            >
-          </div>
-          <div class="icons">
-            <i class="bx bxl-google"></i>
-            <i class="bx bxl-facebook-circle"></i>
-          </div>
-          <div class="links">
-            <a href="../index.html" class="link">Iniciar sesion</a>
-            <button type="submit">Crear cuenta</button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo Electrónico</label>
+          <input
+            type="email"
+            name="correo"
+            id="correo"
+            placeholder="Ingrese su correo electrónico"
+            required
+          />
+        </div>
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <input
+            type="password"
+            name="contrasena"
+            id="contrasena"
+            placeholder="Ingrese su contraseña"
+            required
+          />
+        </div>
+        <div class="terminos-condiciones">
+          <input type="checkbox" id="terminos" name="terminos" required />
+          <label for="terminos"
+            >Acepto los <a href="terminos.html">términos y condiciones</a></label
+          >
+        </div>
+        <div class="icons">
+          <i class="bx bxl-google"></i>
+          <i class="bx bxl-facebook-circle"></i>
+        </div>
+        <div class="links">
+          <button type="submit">Crear Cuenta</button>
+          <a href="login.html" class="link">Iniciar Sesión</a>
+        </div>
+      </form>
     </main>
     <footer>
       <p>&copy; 2024 Novedades Isidora. Todos los derechos reservados.</p>
