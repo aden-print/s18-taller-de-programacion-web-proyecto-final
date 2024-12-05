@@ -1,3 +1,5 @@
+import { descargar_archivo } from "../supabase/operaciones.js";
+
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const nav = document.querySelector("nav");
