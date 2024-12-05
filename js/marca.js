@@ -11,7 +11,6 @@ const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
 let nombresMarca = [];
 
-
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
@@ -21,12 +20,14 @@ mostrarModal.addEventListener("click", (e) => {
 cerrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
 btnCancelar.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
@@ -48,13 +49,13 @@ async function cargarMarcas() {
       <td class="table__cell">${marca.idmarca}</td>
         <td class="table__cell">${marca.nombre}</td>
         <td class="table__cell">
-        <a href="editarmarca.html?id=${marca.idmarca}" class="table__edit" value="${marca.idmarca}">
-          Editar
-        </a>
-        <a href="eliminarmarca.html?id=${marca.idmarca}" class="table__delete" value="${marca.idmarca}">
-          Eliminar
-        </a>
-      </td>
+          <a href="editarmarca.html?id=${marca.idmarca}" class="table__edit" value="${marca.idmarca}">
+            Editar
+          </a>
+          <a href="eliminarmarca.html?id=${marca.idmarca}" class="table__delete" value="${marca.idmarca}">
+            Eliminar
+          </a>
+        </td>
     `;
       tr.classList.add("table__row");
       tbody.appendChild(tr);
@@ -76,41 +77,34 @@ function leerInput(e) {
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
   const { nombre } = data;
+
   const nombreNormalizado = nombre.trim().toLowerCase();
-  
-  
+  btnAgregar.disabled = true;
   if (nombre.trim() === "") {
     alert("El campo marca no puede estar vacio");
     return;
   }
   if (nombresMarca.includes(nombreNormalizado)) {
-    mensajeAgregar.textContent =
-    "Error, ya existe la marca con ese nombre.";
+    mensajeAgregar.textContent = "Error, ya existe la marca con ese nombre.";
     btnAgregar.disabled = false;
     return;
   }
-  
+
+  btnAgregar.value = "Guardando...";
   const { error } = await crearRegistro("marca", data);
+
   if (error) {
     btnAgregar.disabled = false;
     alert("Error al agregar la marca");
     btnAgregar.value = "Guardar";
     if (error.code === "23505") {
-      mensajeAgregar.textContent =
-        "Error, ya existe la marca con ese nombre.";
+      mensajeAgregar.textContent = "Error, ya existe la marca con ese nombre.";
       return;
     }
     mensajeAgregar.textContent = "Error al agregar la marca";
     return;
   }
 
-  btnAgregar.value = "Guardando...";
-  const respuesta = await crearRegistro("marca", data);
-  if (respuesta.error) {
-    alert("Error al agregar la marca");
-    mensajeAgregar.textContent = "Error al agregar la marca";
-    return;
-  }
   btnAgregar.value = "Guardar";
   mensajeAgregar.classList.remove("red");
   mensajeAgregar.textContent = "Marca agregada correctamente";
@@ -119,6 +113,8 @@ formAgregar.addEventListener("submit", async function (evento) {
     cargarMarcas();
     limpiarFormulario();
     mensajeAgregar.textContent = "";
+    btnAgregar.disabled = false;
+    mensajeAgregar.classList.add("red");
   }, 4000);
 });
 
