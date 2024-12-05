@@ -6,22 +6,69 @@
     <title>recuperar_contraseña</title>
     <link rel="stylesheet" href="../css/recuperar.css">
     <link rel="shortcut icon" href="../img/logo-isidora.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 </head>
 <body>
+    <header>
+        <a href="../index.html">
+          <img src="../img/logo.png" alt="Imagen de la tienda" />
+        </a>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="navegacion">
+          <ul id="menu">
+            <li>
+              <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+            </li>
+            <li>
+              <a href="product.html"><i class="fas fa-box-open"></i> Productos</a>
+            </li>
+            <li>
+              <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+            </li>
+            <li>
+              <a href="ubicacion.html"
+                ><i class="fas fa-map-marker-alt"></i> Ubicación</a
+              >
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a
+              >
+            </li>
+            <li>
+              <a href="register.html"
+                ><i class="fas fa-user-plus"></i> Registrarse</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
     <div>
         <form class="formulario" id="loginForm">
             <h1 class="titulo">RECUPERAR CONTRASEÑA</h1>
             <div>
                 <label for="Correo">Correo electronico</label>
-                <input type="email" name="Correo" placeholder="  Correo electronico"   id="Correo" required>
+                <input type="email" name="Correo" placeholder="  Correo electronico" id="Correo" required>
             </div>
             <div class="links">
-                <a href="../index.html" class="link">Iniciar sesion</a>
+                <a href="/pages/login.html" class="link">Iniciar sesion</a>
                 <button type="submit">
                     Enviar
                 </button>
             </div>
         </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Novedades Isidora. Todos los derechos reservados.</p>
+      </footer>
         <script>
             document.getElementById('loginForm').addEventListener('submit', (event) => {
                 // Evita el envío del formulario  

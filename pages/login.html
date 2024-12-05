@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novedades Isidora</title>
+    <title>Novedades Isidora - Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/login.css" />
     <link
       rel="shortcut icon"
@@ -56,32 +56,34 @@
       </nav>
     </header>
     <main>
-      <div>
+      <div class="login-container">
+        <div class="login-image">
+          <img src="../img/logo-isidora.png" alt="Imagen de inicio de sesión" />
+        </div>
         <form class="formulario" id="loginForm" method="POST">
           <h1 class="titulo">INICIAR SESIÓN</h1>
           <div>
-            <label for="USUARIO"
-              ><i class="fa fa-envelope"></i>Correo electronico</label
-            >
+            <label for="email"><i class="fa fa-envelope"></i>Correo electrónico</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Correo electronico"
+              placeholder="Correo electrónico"
               required
             />
           </div>
           <div>
-            <label for="CONTRASEÑA"
-              ><i class="fa fa-unlock-alt"></i>Contraseña</label
-            >
+            <label for="password"><i class="fa fa-unlock-alt"></i>Contraseña</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder="  Contraseña?"
+              placeholder="Contraseña"
               required
             />
+          </div>
+          <div>
+            <button type="submit">Iniciar Sesión</button>
           </div>
           <div class="links">
             <a href="recuperacion.html" class="link"
@@ -89,9 +91,7 @@
             >
             <a href="register.html" class="link">Crear cuenta</a>
           </div>
-          <div>
-            <button type="submit">Iniciar Sesión</button>
-          </div>
+          
         </form>
       </div>
     </main>

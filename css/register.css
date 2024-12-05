@@ -47,25 +47,37 @@ input {
 
 .links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+  width: 100%;
 }
 
-.link {
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-  margin: 5px 0;
-}
-
+.link,
 button {
-  padding: 1rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
   font-size: 1.25rem;
   background-color: #000000;
   color: white;
   cursor: pointer;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;  /* Aquí forzamos que ambos botones tengan el mismo tamaño */
+}
+
+.link:hover,
+button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.link {
+  display: inline-block;
+  width: 100%;  /* Deja que el enlace ocupe su espacio normal */
 }
 
 .icons {
@@ -116,4 +128,51 @@ button {
 .terminos-condiciones input[type="checkbox"] {
   margin-right: 10px;
   width: auto;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 1rem;
+  }
+
+  .nombre-apellido {
+    flex-direction: column;
+  }
+
+  .nombre-apellido div {
+    margin-bottom: 1rem;
+  }
+
+  .campo label,
+  input {
+    font-size: 1rem;
+  }
+
+  .icons i {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;  /* Fuerza el botón a tomar todo el espacio */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titulo {
+    font-size: 1.5rem;
+    padding: 20px 5%;
+  }
+
+  .campo label,
+  input {
+    font-size: 1rem;
+  }
 }
