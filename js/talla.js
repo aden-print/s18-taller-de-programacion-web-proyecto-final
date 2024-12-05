@@ -111,3 +111,21 @@ formAgregar.addEventListener("submit", async function (evento) {
     mensajeAgregar.textContent = "";
   }, 4000);
 });
+
+formAgregar.addEventListener("submit", async function (evento) {
+  evento.preventDefault();
+  const { numero } = data;
+  const nombreNormalizado = nombre.trim().toLowerCase();
+  btnAgregar.disabled = true;
+  if (numero.trim() === "") {
+    alert("El campo nombre no puede estar vacio");
+    return;
+  }
+
+  if (n.includes(nombreNormalizado)) {
+    mensajeAgregar.textContent =
+      "Error, ya existe la categoria con ese nombre.";
+    btnAgregar.disabled = false;
+    return;
+  }
+});
