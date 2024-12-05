@@ -35,31 +35,50 @@ document.addEventListener("click", (event) => {
 
 async function cargarArchivos() {
   const dataArchivos = await listar_archivos();
-  const { data: archivos, error } = dataArchivos;
-  console.log(archivos);
+  const { data: productos, error } = dataArchivos;
+
   if (error) {
     console.log("Error al cargar los archivos");
     return;
   }
 
-  archivos.forEach((archivo) => {
-    const urlPublica = `${
-      supabaseClient.storage
-        .from("imagenes-inicio")
-        .getPublicUrl(`imagenes/inicio/${archivo.name}`).data.publicUrl
-    }`;
+  console.log(productos);
 
-    console.log(urlPublica);
+  const gridProductos = document.querySelector(".services-grid");
+  gridProductos.innerHTML = "";
 
-    // Crea un elemento de imagen
-    // const img = document.createElement("img");
-    // img.src = urlPublica;
-    // img.alt = archivo.name;
-    // img.classList.add("imagen-bucket"); // Agrega clases CSS para estilos si es necesario
+  productos.forEach((producto) => {
+    const div = document.createElement("div");
+    console.log(producto.name);
 
-    // Inserta la imagen en el contenedor
-    // contenedorImagenes.appendChild(img);
+    div.innerHTML = `<img
+          src="https://dibxvkunujlbynhtwbxe.supabase.co/storage/v1/object/public/imagenes-inicio/imagenes/inicio/${producto.name}"/>`;
+    div.classList.add("service-item");
+    gridProductos.appendChild(div);
   });
+
+  // const { data: archivos, error } = dataArchivos;
+  //  <img src="${producto.url}" alt="${producto.name}" class="card__img"></img>
+  // console.log(archivos);
+
+  // archivos.forEach((archivo) => {
+  //   const urlPublica = `${
+  //     supabaseClient.storage
+  //       .from("imagenes-inicio")
+  //       .getPublicUrl(`imagenes/inicio/${archivo.name}`).data.publicUrl
+  //   }`;
+
+  //   console.log("URL: " + urlPublica);
+
+  // Crea un elemento de imagen
+  // const img = document.createElement("img");
+  // img.src = urlPublica;
+  // img.alt = archivo.name;
+  // img.classList.add("imagen-bucket"); // Agrega clases CSS para estilos si es necesario
+
+  // Inserta la imagen en el contenedor
+  // contenedorImagenes.appendChild(img);
+  // });
   // const tbody = document.querySelector(".table__body");
   // tbody.innerHTML = "";
   // archivos.forEach((archivo) => {

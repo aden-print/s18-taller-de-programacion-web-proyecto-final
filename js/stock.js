@@ -27,22 +27,12 @@ async function cargarStock() {
         <td class="table__cell">S/ ${stock.precio}</td>
         <td class="table__cell">${stock.stock}</td>
         <td class="table__cell">
-          <button class="table__edit">
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/color/48/edit--v1.png"
-              alt="edit--v1"
-            />
-          </button>
-          <button class="table__delete">
-            <img
-              width="25"
-              height="25"
-              src="https://img.icons8.com/color/48/delete.png"
-              alt="delete"
-            />
-          </button>
+          <a class="table__edit">
+            Editar
+          </a>
+          <a class="table__delete">
+            Eliminar
+          </a>
         </td>
       `;
       tr.classList.add("table__row");
