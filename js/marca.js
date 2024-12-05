@@ -9,6 +9,8 @@ const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
+let nombresMarca = [];
+
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
@@ -40,27 +42,18 @@ async function cargarMarcas() {
     const tbody = document.querySelector(".table__body");
     tbody.innerHTML = "";
     marcas.forEach((marca) => {
+      nombresMarca.push(marca.nombre.trim().toLowerCase());
       const tr = document.createElement("tr");
       tr.innerHTML = `
       <td class="table__cell">${marca.idmarca}</td>
         <td class="table__cell">${marca.nombre}</td>
         <td class="table__cell">
-        <button class="table__edit">
-          <img
-            width="25"
-            height="25"
-            src="https://img.icons8.com/color/48/edit--v1.png"
-            alt="edit--v1"
-          />
-        </button>
-        <button class="table__delete">
-          <img
-            width="25"
-            height="25"
-            src="https://img.icons8.com/color/48/delete.png"
-            alt="delete"
-          />
-        </button>
+        <a href="editarmarca.html?id=${marca.idmarca}" class="table__edit" value="${marca.idmarca}">
+          Editar
+        </a>
+        <a href="eliminarmarca.html?id=${marca.idmarca}" class="table__delete" value="${marca.idmarca}">
+          Eliminar
+        </a>
       </td>
     `;
       tr.classList.add("table__row");
@@ -83,8 +76,31 @@ function leerInput(e) {
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
   const { nombre } = data;
+  const nombreNormalizado = nombre.trim().toLowerCase();
+  
+  
   if (nombre.trim() === "") {
     alert("El campo marca no puede estar vacio");
+    return;
+  }
+  if (nombresMarca.includes(nombreNormalizado)) {
+    mensajeAgregar.textContent =
+    "Error, ya existe la marca con ese nombre.";
+    btnAgregar.disabled = false;
+    return;
+  }
+  
+  const { error } = await crearRegistro("marca", data);
+  if (error) {
+    btnAgregar.disabled = false;
+    alert("Error al agregar la marca");
+    btnAgregar.value = "Guardar";
+    if (error.code === "23505") {
+      mensajeAgregar.textContent =
+        "Error, ya existe la marca con ese nombre.";
+      return;
+    }
+    mensajeAgregar.textContent = "Error al agregar la marca";
     return;
   }
 
