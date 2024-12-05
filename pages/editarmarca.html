@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marcas</title>
+    <title>Editar Categoria</title>
     <link
       rel="shortcut icon"
       href="../img/logo-isidora.png"
@@ -87,7 +87,7 @@
             </a>
           </li>
           <li>
-            <a href="categoria.html">
+            <a  href="categoria.html">
               <ion-icon name="grid-outline"></ion-icon>
               <span>Categorias</span>
             </a>
@@ -170,50 +170,41 @@
 
     <main class="main">
       <section class="section">
-        <h2 class="section__title">Marcas</h2>
+        <h1 class="section__title">Editar Marca</h1>
         <div class="button">
-          <button class="button__add">Agregar Marca</button>
+          <a href="marca.html" class="button__regresar">Regresar</a>
         </div>
-        <table class="table">
-          <thead class="table__head">
-            <tr class="table__row">
-              <th class="table__head-cell">ID</th>
-              <th class="table__head-cell">Nombre</th>
-              <th class="table__head-cell">Acciones</th>
-            </tr>
-          </thead>
-          <tbody class="table__body"></tbody>
-        </table>
-      </section>
-      <section class="modal-agregar">
         <div class="modal-container">
-          <div class="modal-header">
-            <h3 class="modal-title">Crear Marca</h3>
-            <span class="modal-close">
-              <ion-icon name="close-circle-outline"></ion-icon>
-            </span>
-          </div>
           <div class="modal-body">
-            <form class="form-agregar">
+            <form class="form-editar" autocomplete="off">
+              <label for="id" class="form-label">ID:</label>
+              <input
+                type="text"
+                id="id"
+                name="id"
+                class="form-input"
+                disabled
+              />
               <label for="nombre" class="form-label">Nombre:</label>
               <input
                 type="text"
                 id="nombre"
                 name="nombre"
                 class="form-input"
-                placeholder="Nombre de la Marca"
+                placeholder="Nombre de la categoria"
                 required
               />
               <div class="form-botones">
-                <input type="submit" class="btn-agregar" value="Guardar" />
-                <a href="#" class="btn-cancelar">Cancelar</a>
+                <input type="submit" class="btn-editar" value="Guardar" />
+                <a href="marca.html" class="btn-cancelar">Cancelar</a>
               </div>
-              <p class="mensaje-agregar red"></p>
+              <p class="mensaje-editar red"></p>
             </form>
           </div>
         </div>
       </section>
     </main>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -225,6 +216,6 @@
     <script src="../js/theme.js"></script>
     <script src="../js/mode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script type="module" src="../js/marca.js"></script>
+    <script type="module" src="../js/editarMarca.js"></script>
   </body>
 </html>
