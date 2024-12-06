@@ -123,10 +123,10 @@ formAgregar.addEventListener("submit", async function (evento) {
   }
   btnAgregar.value = "Guardar";
   mensajeAgregar.classList.remove("red");
-  mensajeAgregar.textContent = "La tallase  agregada correctamente";
+  mensajeAgregar.textContent = "La talla se agrego correctamente";
   setTimeout(() => {
     modal.classList.remove("modal-show");
-    cargarCategorias();
+    cargarTallas();
     limpiarFormulario();
     mensajeAgregar.classList.add("red");
     mensajeAgregar.textContent = "";
