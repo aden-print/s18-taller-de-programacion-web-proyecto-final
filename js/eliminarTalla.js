@@ -3,7 +3,8 @@ import { obtenerRegistro, eliminar } from "../supabase/operaciones.js";
 const queryParams = window.location.search;
 const modal = document.querySelector(".modal-agregar");
 const inputId = document.querySelector("#id");
-const inputTalla = document.querySelector("#talla");
+const inputTalla = document.querySelector("#numero");
+const inputDescripcion = document.querySelector("#descripcion");
 const btnDelete = document.querySelector(".btn-eliminar");
 const mensajeEliminar = document.querySelector(".mensaje-eliminar");
 const btnSi = document.querySelector(".btn-agregar");
@@ -18,12 +19,15 @@ async function cargarTalla() {
     "idtalla",
     idTalla
   );
+  console.log(talla);
+
   if (error) {
     console.log(error);
     return;
   }
-  inputId.value = talla[0].idTalla;
-  inputTalla.value = talla[0].numero.trim();
+  inputId.value = talla[0].idtalla;
+  inputTalla.value = talla[0].numero;
+  inputDescripcion.value = talla[0].descripcion.trim();
 }
 
 cargarTalla();

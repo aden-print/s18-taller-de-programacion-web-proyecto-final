@@ -9,7 +9,7 @@ const dataClientes = await listarDatos(
 function mostrarClientes() {
   const { data: clientes, error } = dataClientes;
   if (error) {
-    alert("Error al cargar los clientes");
+    console.log("Error al cargar los clientes");
     return;
   }
   const tbody = document.querySelector(".table__body");
@@ -25,22 +25,12 @@ function mostrarClientes() {
         <td class="table__cell">${cliente.persona.telefono}</td>
         <td class="table__cell">${cliente.direccion}</td>
         <td class="table__cell">
-            <button class="table__edit">
-            <img
-                width="25"
-                height="25"
-                src="https://img.icons8.com/color/48/edit--v1.png"
-                alt="edit--v1"
-            />
-            </button>
-            <button class="table__delete">
-            <img
-                width="25"
-                height="25"
-                src="https://img.icons8.com/color/48/delete.png"
-                alt="delete"
-            />
-            </button>
+            <a class="table__edit">
+              Editar
+            </a>
+            <a class="table__delete">
+              Eliminar
+            </a>
         </td>
         `;
     tr.classList.add("table__row");

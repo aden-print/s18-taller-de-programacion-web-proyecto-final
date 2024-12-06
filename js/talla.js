@@ -35,7 +35,7 @@ async function cargarTallas() {
   function mostrarTallas() {
     const { data: tallas, error } = dataTallas;
     if (error) {
-      alert("Error al cargar las tallas");
+      console.log("Error al cargar las tallas");
       return;
     }
     const tbody = document.querySelector(".table__body");
@@ -84,8 +84,6 @@ formAgregar.addEventListener("submit", async function (evento) {
     return;
   }
 
-  cargarTallas();
-
   btnAgregar.value = "Guardando...";
   const { error } = await crearRegistro("talla", data);
 
@@ -129,3 +127,5 @@ formAgregar.addEventListener("submit", async function (evento) {
     return;
   }
 });
+
+cargarTallas();

@@ -41,7 +41,7 @@ async function cargarProveedores() {
   function mostrarProveedores() {
     const { data: proveedores, error } = dataProveedores;
     if (error) {
-      alert("Error al cargar los proveedores");
+      console.log("Error al cargar los proveedores");
       return;
     }
     const tbody = document.querySelector(".table__body");
@@ -55,22 +55,12 @@ async function cargarProveedores() {
           <td class="table__cell">${proveedor.persona.correo}</td>
           <td class="table__cell">${proveedor.persona.telefono}</td>
           <td class="table__cell">
-              <button class="table__edit">
-              <img
-                  width="25"
-                  height="25"
-                  src="https://img.icons8.com/color/48/edit--v1.png"
-                  alt="edit--v1"
-              />
-              </button>
-              <button class="table__delete">
-              <img
-                  width="25"
-                  height="25"
-                  src="https://img.icons8.com/color/48/delete.png"
-                  alt="delete"
-              />
-              </button>
+              <a href="editarproveedor.html?id=${proveedor.idproveedor}" class="table__edit">
+                Editar
+              </a>
+              <a href="eliminarproveedor.html?id=${proveedor.idproveedor}" class="table__delete">
+                Eliminar
+              </a>
           </td>
           `;
       tr.classList.add("table__row");

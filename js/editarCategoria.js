@@ -1,4 +1,8 @@
-import { obtenerRegistro, actualizar } from "../supabase/operaciones.js";
+import {
+  obtenerRegistro,
+  actualizar,
+  listarDatos,
+} from "../supabase/operaciones.js";
 
 const queryParams = window.location.search;
 const inputId = document.querySelector("#id");
@@ -9,6 +13,7 @@ const mensajeEditar = document.querySelector(".mensaje-editar");
 
 const urlParams = new URLSearchParams(queryParams);
 const idCategoria = urlParams.get("id");
+const nombresCategorias = [];
 
 async function cargarCategoria() {
   const { data: categoria, error } = await obtenerRegistro(
@@ -33,8 +38,14 @@ formularioEditar.addEventListener("submit", async (e) => {
   const dataActualizar = {
     nombre: inputCategoria.value.trim(),
   };
-  console.log(dataActualizar);
-  console.log(idCategoria);
+
+  if (nombresCategorias.includes(dataActualizar.nombre.toLowerCase())) {
+    mensajeEditar.textContent = "Error, ya existe una categoria con ese nombre";
+    btnEditar.disabled = false;
+    btnEditar.value = "Guardar";
+    return;
+  }
+
   const { error } = await actualizar(
     "categoria",
     dataActualizar,
@@ -58,3 +69,20 @@ formularioEditar.addEventListener("submit", async (e) => {
     window.location.href = "categoria.html";
   }, 4000);
 });
+
+async function agregarCategoria() {
+  const { data: categorias, error } = await listarDatos(
+    "categoria",
+    "idcategoria",
+    "*"
+  );
+  if (error) {
+    console.log(error);
+    return;
+  }
+  categorias.forEach((categoria) => {
+    nombresCategorias.push(categoria.nombre.trim().toLowerCase());
+  });
+}
+
+agregarCategoria();
