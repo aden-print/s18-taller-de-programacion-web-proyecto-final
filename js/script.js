@@ -1,8 +1,9 @@
-import { listar_archivos } from "../supabase/operaciones.js";
+import { listarDatos } from "../supabase/operaciones.js";
 
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const nav = document.querySelector("nav");
+const productosInicio = [];
 
 // Abre y cierra el menú al hacer clic en el botón de hamburguesa
 menuToggle.addEventListener("click", () => {
@@ -34,7 +35,7 @@ document.addEventListener("click", (event) => {
 });
 
 async function cargarArchivos() {
-  const dataArchivos = await listar_archivos();
+  const dataArchivos = await listarDatos("inicio", "id", "*");
   const { data: productos, error } = dataArchivos;
 
   if (error) {
@@ -46,58 +47,21 @@ async function cargarArchivos() {
 
   const gridProductos = document.querySelector(".services-grid");
   gridProductos.innerHTML = "";
-
   productos.forEach((producto) => {
     const div = document.createElement("div");
-    console.log(producto.name);
 
     div.innerHTML = `<img
-          src="https://dibxvkunujlbynhtwbxe.supabase.co/storage/v1/object/public/imagenes-inicio/imagenes/inicio/${producto.name}"/>`;
+          src="https://dibxvkunujlbynhtwbxe.supabase.co/storage/v1/object/public/imagenes-inicio/imagenes/inicio/${
+            producto.imagen
+          }"
+          alt="${producto.descripcion}"
+          />
+          <h3>${producto.titulo}</h3>
+          <p>S/ ${producto.precio.toFixed(2)}</
+          `;
     div.classList.add("service-item");
     gridProductos.appendChild(div);
   });
-
-  // const { data: archivos, error } = dataArchivos;
-  //  <img src="${producto.url}" alt="${producto.name}" class="card__img"></img>
-  // console.log(archivos);
-
-  // archivos.forEach((archivo) => {
-  //   const urlPublica = `${
-  //     supabaseClient.storage
-  //       .from("imagenes-inicio")
-  //       .getPublicUrl(`imagenes/inicio/${archivo.name}`).data.publicUrl
-  //   }`;
-
-  //   console.log("URL: " + urlPublica);
-
-  // Crea un elemento de imagen
-  // const img = document.createElement("img");
-  // img.src = urlPublica;
-  // img.alt = archivo.name;
-  // img.classList.add("imagen-bucket"); // Agrega clases CSS para estilos si es necesario
-
-  // Inserta la imagen en el contenedor
-  // contenedorImagenes.appendChild(img);
-  // });
-  // const tbody = document.querySelector(".table__body");
-  // tbody.innerHTML = "";
-  // archivos.forEach((archivo) => {
-  //   const tr = document.createElement("tr");
-  //   tr.innerHTML = `
-  //     <td class="table__cell">${archivo.name}</td>
-  //     <td class="table__cell">${archivo.size}</td>
-  //     <td class="table__cell">
-  //       <a href="${archivo.url}" class="table__edit" target="_blank">
-  //         Ver
-  //       </a>
-  //       <a href="#" class="table__delete" value="${archivo.name}">
-  //         Eliminar
-  //       </a>
-  //     </td>
-  //   `;
-  //   tr.classList.add("table__row");
-  //   tbody.appendChild(tr);
-  // });
 }
 
 cargarArchivos();
