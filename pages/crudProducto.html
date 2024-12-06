@@ -3,35 +3,238 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imagenes</title>
+    <title>Subir productos</title>
+    <link
+      rel="shortcut icon"
+      href="../img/logo-isidora.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    
   </head>
   <body>
-    <h1>Subir Imagenes</h1>
-    <form class="formulario-imagen-producto">
-      <label for="file">Imagen:</label>
-      <br />
+    
+    <div class="menu">
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+
+    <div class="barra-lateral">
+      <div>
+        <div class="nombre-pagina">
+          <img
+            id="logoHeader"
+            src="../img/logo-isidora.png"
+            alt="Logo Novedades Isidora"
+          />
+          <span>Novedades Isidora</span>
+        </div>
+      </div>
+
+      <nav class="navegacion">
+        <ul>
+          <li>
+            <a href="stock.html">
+              <ion-icon name="storefront-outline"></ion-icon>
+              <span>Stock</span>
+            </a>
+          </li>
+          <li>
+            <a href="venta.html">
+              <ion-icon name="cash-outline"></ion-icon>
+              <span>Ventas</span>
+            </a>
+          </li>
+          <li>
+            <a href="compra.html">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span>Compras</span>
+            </a>
+          </li>
+          <li>
+            <a href="proveedor.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-truck"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#2c3e50"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path
+                  d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
+                />
+              </svg>
+              <span>Proveedores</span>
+            </a>
+          </li>
+          <li>
+            <a href="cliente.html">
+              <ion-icon name="people-outline"></ion-icon>
+              <span>Clientes</span>
+            </a>
+          </li>
+          <li>
+            <a href="productos.html">
+              <ion-icon name="cube-outline"></ion-icon>
+              <span>Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="categoria.html">
+              <ion-icon name="grid-outline"></ion-icon>
+              <span>Categorias</span>
+            </a>
+          </li>
+          <li>
+            <a href="talla.html">
+              <ion-icon name="swap-vertical-outline"></ion-icon>
+              <span>Tallas</span>
+            </a>
+          </li>
+        
+          <li>
+            <a href="marca.html">
+              <ion-icon name="checkmark-circle-outline"></ion-icon>
+              <span>Marcas</span>
+            </a>
+          </li>
+          <li>
+            <a href="crudProducto.html">
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+              <span>Subir producto</span>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-logout-2"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"
+                />
+                <path d="M15 12h-12l3 -3" />
+                <path d="M6 15l-3 -3" />
+              </svg>
+              <span>Cerrar Sesión</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div>
+        <div class="linea"></div>
+
+        <div class="modo-oscuro">
+          <div class="info">
+            <ion-icon name="moon-outline"></ion-icon>
+            <span>Dark Mode</span>
+          </div>
+          <div class="switch">
+            <div class="base">
+              <div class="circulo"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="usuario">
+          <img src="../img/angel.jpg" alt="logo" />
+          <div class="info-usuario">
+            <div class="nombre-email">
+              <span class="nombre">Angel</span>
+              <span class="email">angel@gmail.com</span>
+            </div>
+            <ion-icon
+              id="cerrarSesion"
+              name="ellipsis-vertical-outline"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <main class="main">
+      <section class="section">
+        <h1 class="section__title">Subir producto</h1>
+        <div class="modal-container">
+          <div class="modal-body">
+            <form class="form-agregar" autocomplete="off">
+
+   
+      <label for="file"  class="form-label">Imagen:</label>
+      
       <input
         type="file"
         name="file"
         id="file"
+        class="form-input"
         accept="image/jpeg, image/png, image/webp, image/avif"
         required
       />
-      <br />
-      <label for="titulo">Titulo:</label>
-      <input type="text" name="titulo" id="titulo" required />
-      <br />
-      <label for="descripcion">Descripcion:</label>
-      <input type="text" name="descripcion" id="descripcion" required />
-      <br />
-      <label for="precio">Precio:</label>
-      <input type="text" name="precio" id="precio" required />
-      <br />
-      <input type="submit" value="Subir" name="submit" />
+      
+      <label for="titulo" class="form-label">Titulo:</label>
+      <input type="text" name="titulo" id="titulo"class="form-input" required />
+     
+      <label for="descripcion" class="form-label">Descripcion:</label>
+      <input type="text" name="descripcion" id="descripcion" class="form-input" required />
+      <label for="precio" class="form-label">Precio:</label>
+      <input type="text" name="precio" id="precio" class="form-input" required />
+      
+      
+
+      <div class="form-botones">
+        <input type="submit" class="btn-editar" value="Guardar" class="form-input"/>
+        
+      </div>
     </form>
-    <!-- <script src="../js/theme.js"></script>
-    <script src="../js/mode.js"></script> -->
+  </div>
+</div>
+
+      </section>
+    </main>
+   
+    <script src="../js/theme.js"></script>
+      
+    <script src="../js/mode.js"></script>
+
+    
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+    <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script type="module" src="../js/subirProducto.js"></script>
+
+
+   
+  
+
+
   </body>
 </html>
