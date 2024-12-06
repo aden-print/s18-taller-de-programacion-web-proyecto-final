@@ -42,10 +42,13 @@ export async function consumir_funcion(nombre_funcion, parametros) {
   return respuesta;
 }
 
-export async function subir_archivo(archivo) {
+export async function subir_archivo(ruta, archivo) {
   const respuesta = await supabaseClient.storage
-    .from("nombre_de_bucket")
-    .upload("nombre_de_archivo", archivo);
+    .from("imagenes-inicio")
+    .upload(ruta, archivo, {
+      cacheControl: "0", // 0 segundos, no cache
+      upsert: false, // No sobreescribe el archivo si ya existe uno con el mismo nombre (si se tiene permisos y se tiene el id del archivo)
+    });
   return respuesta;
 }
 
@@ -58,8 +61,8 @@ export async function descargar_archivo(nombre_archivo) {
 
 export async function eliminar_archivo(nombre_archivo) {
   const respuesta = await supabaseClient.storage
-    .from("nombre_de_bucket")
-    .remove(nombre_archivo);
+    .from("imagenes-inicio")
+    .remove([nombre_archivo]);
   return respuesta;
 }
 
