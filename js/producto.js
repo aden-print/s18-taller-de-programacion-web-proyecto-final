@@ -11,10 +11,12 @@ const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "", descripcion: "", idcategoria: "" };
+const nombreProductos = [];
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.add("modal-show");
 });
 
@@ -46,6 +48,7 @@ async function cargarProductos() {
     const tbody = document.querySelector(".table__body");
     tbody.innerHTML = "";
     productos.forEach((producto) => {
+      nombreProductos.push(producto.nombre.trim().toLowerCase());
       const tr = document.createElement("tr");
       tr.innerHTML = `
       <td class="table__cell">${producto.idproducto}</td>
@@ -55,10 +58,14 @@ async function cargarProductos() {
         producto.descripcion ? producto.descripcion : ""
       }</td>
       <td class="table__cell">
-        <a class="table__edit">
+        <a href="editarproducto.html?id=${
+          producto.idproducto
+        }" class="table__edit">
           Editar
         </a>
-        <a class="table__delete">
+        <a href="eliminarproducto.html?id=${
+          producto.idproducto
+        }" class="table__delete">
           Eliminar
         </a>
       </td>
@@ -77,7 +84,7 @@ async function cargarCategorias() {
   function mostrarCategorias() {
     const { data: categorias, error } = dataCategorias;
     if (error) {
-      alert("Error al cargar las categorias");
+      console.log("Error al cargar las categorias");
       return;
     }
     const select = document.querySelector("#idcategoria");
@@ -118,6 +125,8 @@ function leerInput(e) {
 
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
+  btnAgregar.value = "Guardando...";
+  btnAgregar.disabled = true;
   const { nombre, idcategoria } = data;
   if (nombre.trim() === "") {
     alert("El campo nombre no puede estar vacio");
@@ -128,10 +137,16 @@ formAgregar.addEventListener("submit", async function (evento) {
     return;
   }
 
-  btnAgregar.value = "Guardando...";
+  if (nombreProductos.includes(nombre.trim().toLowerCase())) {
+    mensajeAgregar.textContent = "Error, el producto ya existe";
+    btnAgregar.disabled = false;
+    btnAgregar.value = "Guardar";
+    return;
+  }
+
   const respuesta = await crearRegistro("producto", data);
   if (respuesta.error) {
-    alert("Error al agregar el producto");
+    console.log("Error al agregar el producto");
     mensajeAgregar.textContent = "Error al agregar el producto";
     return;
   }
@@ -144,6 +159,7 @@ formAgregar.addEventListener("submit", async function (evento) {
     limpiarFormulario();
     limpiarData();
     mensajeAgregar.textContent = "";
+    mensajeAgregar.classList.add("red");
   }, 4000);
 });
 
