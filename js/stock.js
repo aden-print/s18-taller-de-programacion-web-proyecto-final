@@ -3,7 +3,7 @@ import { listarDatos } from "../supabase/operaciones.js";
 async function cargarStock() {
   const dataStock = await listarDatos(
     "contiene",
-    "stock",
+    "idcontiene",
     "idcontiene, producto(nombre, categoria(nombre)), marca(nombre), talla(numero), color(nombre), precio, stock"
   );
 
