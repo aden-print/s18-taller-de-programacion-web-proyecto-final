@@ -53,12 +53,14 @@ async function cargarTallas() {
           talla.descripcion ? talla.descripcion : ""
         }</td>
         <td class="table__cell">
-        <a href="editartalla.html?id=${talla.idtalla}" class="table__edit">
-          Editar
-        </a>
-        <a href="eliminartalla.html?id=${talla.idtalla}" class="table__delete">
-          Eliminar
-        </a>
+          <a href="editartalla.html?id=${talla.idtalla}" class="table__edit">
+            Editar
+          </a>
+          <a href="eliminartalla.html?id=${
+            talla.idtalla
+          }" class="table__delete">
+            Eliminar
+          </a>
       </td>
     `;
       tr.classList.add("table__row");
