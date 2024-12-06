@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eliminar Categoria</title>
+    <title>Editar Categoria</title>
     <link
       rel="shortcut icon"
       href="../img/logo-isidora.png"
@@ -87,7 +87,7 @@
             </a>
           </li>
           <li>
-            <a id="pagina-actual" href="categoria.html">
+            <a href="categoria.html">
               <ion-icon name="grid-outline"></ion-icon>
               <span>Categorias</span>
             </a>
@@ -99,7 +99,7 @@
             </a>
           </li>
           <li>
-            <a href="color.html">
+            <a id="pagina-actual" href="color.html">
               <ion-icon name="color-palette-outline"></ion-icon>
               <span>Colores</span>
             </a>
@@ -170,13 +170,13 @@
 
     <main class="main">
       <section class="section">
-        <h1 class="section__title">Eliminar Categoria</h1>
+        <h1 class="section__title">Editar Color</h1>
         <div class="button">
-          <a href="categoria.html" class="button__regresar">Regresar</a>
+          <a href="color.html" class="button__regresar">Regresar</a>
         </div>
         <div class="modal-container">
           <div class="modal-body">
-            <form class="form-eliminar" autocomplete="off">
+            <form class="form-editar" autocomplete="off">
               <label for="id" class="form-label">ID:</label>
               <input
                 type="text"
@@ -191,29 +191,14 @@
                 id="nombre"
                 name="nombre"
                 class="form-input"
-                disabled
+                placeholder="Nombre de la categoria"
+                required
               />
               <div class="form-botones">
-                <input type="submit" class="btn-eliminar" value="Confirmar" />
-                <a href="categoria.html" class="btn-cancelar">Cancelar</a>
+                <input type="submit" class="btn-editar" value="Guardar" />
+                <a href="color.html" class="btn-cancelar">Cancelar</a>
               </div>
-              <p class="mensaje-eliminar red"></p>
-            </form>
-          </div>
-        </div>
-      </section>
-      <section class="modal-agregar">
-        <div class="modal-container">
-          <div class="modal-body">
-            <form class="form-agregar">
-              <label for="Mensaje"
-                >¿Estas seguro que quieres eliminar la categoria?</label
-              >
-              <div class="form-botones">
-                <input type="submit" class="btn-agregar" value="Si" />
-                <a class="btn-no">No</a>
-              </div>
-              <p class="mensaje-agregar red"></p>
+              <p class="mensaje-editar red"></p>
             </form>
           </div>
         </div>
@@ -231,6 +216,6 @@
     <script src="../js/theme.js"></script>
     <script src="../js/mode.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script type="module" src="../js/eliminarCategoria.js"></script>
+    <script type="module" src="../js/editarColor.js"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@ const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
 const data = { nombre: "" };
+const nombreColores = [];
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
@@ -19,12 +20,14 @@ mostrarModal.addEventListener("click", (e) => {
 cerrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
 btnCancelar.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.remove("modal-show");
 });
 
@@ -40,15 +43,16 @@ async function cargarColores() {
     const tbody = document.querySelector(".table__body");
     tbody.innerHTML = "";
     colores.forEach((color) => {
+      nombreColores.push(color.nombre.trim().toLowerCase());
       const tr = document.createElement("tr");
       tr.innerHTML = `
       <td class="table__cell">${color.idcolor}</td>
         <td class="table__cell">${color.nombre}</td>
         <td class="table__cell">
-        <a class="table__edit">
+        <a href="editarcolor.html?id=${color.idcolor}" class="table__edit">
           Editar
         </a>
-        <a class="table__delete">
+        <a href="eliminarcolor.html?id=${color.idcolor}" class="table__delete">
           Eliminar
         </a>
       </td>
@@ -75,26 +79,36 @@ function leerInput(e) {
 
 formAgregar.addEventListener("submit", async function (evento) {
   evento.preventDefault();
+  btnAgregar.value = "Guardando...";
+  btnAgregar.disabled = true;
   const { nombre } = data;
   if (nombre.trim() === "") {
     alert("El campo nombre no puede estar vacio");
     return;
   }
 
-  btnAgregar.value = "Guardando...";
-  const respuesta = await crearRegistro("color", data);
-  if (respuesta.error) {
-    alert("Error al agregar el color");
-    mensajeAgregar.textContent = "Error al agregar el color";
+  if (nombreColores.includes(nombre.trim().toLowerCase())) {
+    btnAgregar.disabled = false;
+    mensajeAgregar.textContent = "Error, el color ya existe";
+    btnAgregar.value = "Guardar";
     return;
   }
-  btnAgregar.value = "Guardar";
+
+  const { error } = await crearRegistro("color", data);
+  if (error) {
+    console.log("Error al agregar el color");
+    mensajeAgregar.textContent = "Error al agregar el color";
+    btnAgregar.disabled = false;
+    return;
+  }
   mensajeAgregar.classList.remove("red");
   mensajeAgregar.textContent = "Color agregado correctamente";
+  btnAgregar.value = "Guardar";
   setTimeout(() => {
     modal.classList.remove("modal-show");
     cargarColores();
     limpiarFormulario();
     mensajeAgregar.textContent = "";
+    mensajeAgregar.classList.remove("red");
   }, 4000);
 });
