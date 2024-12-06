@@ -4,7 +4,7 @@ import {
   eliminar_archivo,
 } from "../supabase/operaciones.js";
 
-const formulario = document.querySelector(".formulario-imagen-producto");
+const formulario = document.querySelector(".form-agregar");
 const inputImagen = document.querySelector("#file");
 const inputTitulo = document.querySelector("#titulo");
 const inputDescripcion = document.querySelector("#descripcion");
