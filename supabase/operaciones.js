@@ -75,3 +75,11 @@ export async function listar_archivos() {
     });
   return respuesta;
 }
+
+export async function obtener_nombre(tabla, campo, idColumna, idTabla) {
+  const respuesta = await supabaseClient
+    .from(tabla)
+    .select(campo)
+    .eq(idColumna, idTabla);
+  return respuesta;
+}
