@@ -18,8 +18,7 @@ const mensajeEditar = document.querySelector(".mensaje-editar");
 const urlParams = new URLSearchParams(queryParams);
 const idProveedor = urlParams.get("id");
 let idPersona;
-const correosPersonas = [];
-const telefonosPersonas = [];
+let datosPersonas = [];
 
 async function cargarCategoria() {
   const { data: proveedor, error } = await obtenerRegistro(
@@ -89,15 +88,27 @@ formularioEditar.addEventListener("submit", async (e) => {
     return;
   }
 
-  if (correosPersonas.includes(dataActualizar.p_correo.trim().toLowerCase())) {
-    mensajeEditar.textContent = "Error, correo ya registrado";
+  const correoDuplicado = datosPersonas.some(
+    (persona) =>
+      persona.correo === dataActualizar.p_correo &&
+      parseInt(persona.idpersona) !== parseInt(idPersona)
+  );
+
+  if (correoDuplicado) {
+    mensajeEditar.textContent = "Error, correo duplicado";
     btnEditar.disabled = false;
     btnEditar.value = "Guardar";
     return;
   }
 
-  if (telefonosPersonas.includes(dataActualizar.p_telefono.trim())) {
-    mensajeEditar.textContent = "Error, teléfono ya registrado";
+  const telefonoDuplicado = datosPersonas.some(
+    (persona) =>
+      persona.telefono === dataActualizar.p_telefono &&
+      parseInt(persona.idpersona) !== parseInt(idPersona)
+  );
+
+  if (telefonoDuplicado) {
+    mensajeEditar.textContent = "Error, teléfono duplicado";
     btnEditar.disabled = false;
     btnEditar.value = "Guardar";
     return;
@@ -143,11 +154,11 @@ async function cargarPersonas() {
     console.log("Error al cargar las personas");
     return;
   }
-
-  personas.forEach((persona) => {
-    correosPersonas.push(persona.correo.trim().toLowerCase());
-    telefonosPersonas.push(persona.telefono.trim());
-  });
+  datosPersonas = personas.map((persona) => ({
+    idpersona: persona.idpersona,
+    correo: persona.correo.trim().toLowerCase(),
+    telefono: persona.telefono.trim(),
+  }));
 }
 
 cargarPersonas();
