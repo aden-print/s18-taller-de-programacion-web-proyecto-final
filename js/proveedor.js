@@ -11,11 +11,13 @@ const telefonoProveedor = document.querySelector("#telefono");
 const formAgregar = document.querySelector(".form-agregar");
 const btnAgregar = document.querySelector(".btn-agregar");
 const mensajeAgregar = document.querySelector(".mensaje-agregar");
-// const data = { p_nombre: "" , p_apellido: "", p_correo: "", p_telefono: ""};
+const correosPersonas = [];
+const telefonosPersonas = [];
 
 mostrarModal.addEventListener("click", (e) => {
   e.preventDefault();
   limpiarFormulario();
+  mensajeAgregar.textContent = "";
   modal.classList.add("modal-show");
 });
 
@@ -78,22 +80,14 @@ function limpiarFormulario() {
   apelldoProveedor.value = "";
 }
 
-nombreProveedor.addEventListener("input", leerInput);
-telefonoProveedor.addEventListener("input", leerInput);
-correoProveedor.addEventListener("input", leerInput);
-apelldoProveedor.addEventListener("input", leerInput);
-
-function leerInput(e) {
-  data[e.target.id] = e.target.value;
-}
-
-btnAgregar.addEventListener("click", async (e) => {
+formAgregar.addEventListener("submit", async (e) => {
   e.preventDefault();
+  btnAgregar.disabled = true;
   const data = {
-    p_nombres: nombreProveedor.value,
-    p_apellidos: apelldoProveedor.value,
-    p_correo: correoProveedor.value,
-    p_telefono: telefonoProveedor.value,
+    p_nombres: nombreProveedor.value.trim(),
+    p_apellidos: apelldoProveedor.value.trim(),
+    p_correo: correoProveedor.value.trim(),
+    p_telefono: telefonoProveedor.value.trim(),
   };
   if (
     !data.p_nombres ||
@@ -101,30 +95,72 @@ btnAgregar.addEventListener("click", async (e) => {
     !data.p_correo ||
     !data.p_telefono
   ) {
+    btnAgregar.disabled = false;
     mensajeAgregar.textContent = "Todos los campos son obligatorios";
+    return;
+  }
+
+  if (data.p_correo.indexOf("@") === -1) {
+    btnAgregar.disabled = false;
+    mensajeAgregar.textContent = "Correo inválido";
+    return;
+  }
+
+  if (data.p_telefono.length !== 9) {
+    btnAgregar.disabled = false;
+    mensajeAgregar.textContent = "Teléfono inválido";
+    return;
+  }
+
+  if (correosPersonas.includes(data.p_correo.toLowerCase())) {
+    btnAgregar.disabled = false;
+    mensajeAgregar.textContent = "El correo ya está registrado";
+    return;
+  }
+
+  if (telefonosPersonas.includes(data.p_telefono)) {
+    btnAgregar.disabled = false;
+    mensajeAgregar.textContent = "El teléfono ya está registrado";
     mensajeAgregar.classList.add("mensaje-error");
     return;
   }
 
-  // console.log(data);
-  // return;
-
-  const respuesta = await consumir_funcion("insert_persona_proveedor", data);
-  if (respuesta.error) {
+  const { error } = await consumir_funcion("insert_persona_proveedor", data);
+  if (error) {
+    btnAgregar.disabled = false;
     mensajeAgregar.textContent = "Error al agregar el proveedor";
-    mensajeAgregar.classList.add("mensaje-error");
     return;
   }
-  btnAgregar.value = "Guardar";
   mensajeAgregar.classList.remove("red");
   mensajeAgregar.textContent = "Proveedor agregado correctamente";
   setTimeout(() => {
     mensajeAgregar.textContent = "";
-    mensajeAgregar.classList.remove("mensaje-exito");
+    mensajeAgregar.classList.add("red");
     modal.classList.remove("modal-show");
+    btnAgregar.disabled = false;
     cargarProveedores();
     limpiarFormulario();
   }, 4000);
 });
 
 cargarProveedores();
+
+async function cargarPersonas() {
+  const { data: personas, error } = await listarDatos(
+    "persona",
+    "idpersona",
+    "*"
+  );
+
+  if (error) {
+    console.log("Error al cargar las personas");
+    return;
+  }
+
+  personas.forEach((persona) => {
+    correosPersonas.push(persona.correo.trim().toLowerCase());
+    telefonosPersonas.push(persona.telefono.trim());
+  });
+}
+
+cargarPersonas();

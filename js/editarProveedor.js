@@ -1,6 +1,6 @@
 import {
   obtenerRegistro,
-  actualizar,
+  consumir_funcion,
   listarDatos,
   obtener_nombre,
 } from "../supabase/operaciones.js";
@@ -17,8 +17,9 @@ const mensajeEditar = document.querySelector(".mensaje-editar");
 
 const urlParams = new URLSearchParams(queryParams);
 const idProveedor = urlParams.get("id");
-const nombresCategorias = [];
 let idPersona;
+const correosPersonas = [];
+const telefonosPersonas = [];
 
 async function cargarCategoria() {
   const { data: proveedor, error } = await obtenerRegistro(
@@ -61,7 +62,7 @@ async function obtenerCampo(id, campo) {
     return;
   }
 
-  return persona[0][campo];
+  return persona[0][campo].trim();
 }
 
 formularioEditar.addEventListener("submit", async (e) => {
@@ -69,53 +70,84 @@ formularioEditar.addEventListener("submit", async (e) => {
   btnEditar.value = "Guardando...";
   btnEditar.disabled = true;
   const dataActualizar = {
-    nombre: inputCategoria.value.trim(),
+    p_idproveedor: idProveedor,
+    p_nombres: nombreProveedor.value.trim(),
+    p_apellidos: apelldoProveedor.value.trim(),
+    p_correo: correoProveedor.value.trim(),
+    p_telefono: telefonoProveedor.value.trim(),
   };
 
-  if (nombresCategorias.includes(dataActualizar.nombre.toLowerCase())) {
-    mensajeEditar.textContent = "Error, ya existe una categoria con ese nombre";
+  if (
+    dataActualizar.p_nombres === "" ||
+    dataActualizar.p_apellidos === "" ||
+    dataActualizar.p_correo === "" ||
+    dataActualizar.p_telefono === ""
+  ) {
+    mensajeEditar.textContent = "Error, campos vacíos";
     btnEditar.disabled = false;
     btnEditar.value = "Guardar";
     return;
   }
 
-  const { error } = await actualizar(
-    "persona",
-    dataActualizar,
-    "idpersona",
-    idPersona
+  if (correosPersonas.includes(dataActualizar.p_correo.trim().toLowerCase())) {
+    mensajeEditar.textContent = "Error, correo ya registrado";
+    btnEditar.disabled = false;
+    btnEditar.value = "Guardar";
+    return;
+  }
+
+  if (telefonosPersonas.includes(dataActualizar.p_telefono.trim())) {
+    mensajeEditar.textContent = "Error, teléfono ya registrado";
+    btnEditar.disabled = false;
+    btnEditar.value = "Guardar";
+    return;
+  }
+
+  if (dataActualizar.p_correo.indexOf("@") === -1) {
+    mensajeEditar.textContent = "Error, correo inválido";
+    btnEditar.disabled = false;
+    btnEditar.value = "Guardar";
+    return;
+  }
+
+  const { error } = await consumir_funcion(
+    "update_persona_proveedor",
+    dataActualizar
   );
   if (error) {
     console.log(error);
+    mensajeEditar.textContent = "Error al actualizar el registro";
     if (error.code === "23505") {
       mensajeEditar.textContent =
-        "Error al actualizar, ya existe esa categoria.";
+        "Error al actualizar, hay un campo que ya existe.";
     }
     btnEditar.disabled = false;
     btnEditar.value = "Guardar";
-    mensajeEditar.textContent = "Error al actualizar el registro";
     return;
   }
   mensajeEditar.classList.remove("red");
-  mensajeEditar.textContent = "Registro actualizado correctamente";
+  mensajeEditar.textContent = "Proveedor actualizado correctamente";
   setTimeout(() => {
-    window.location.href = "categoria.html";
+    window.location.href = "proveedor.html";
   }, 4000);
 });
 
-async function agregarPersona() {
+async function cargarPersonas() {
   const { data: personas, error } = await listarDatos(
     "persona",
     "idpersona",
     "*"
   );
+
   if (error) {
-    console.log(error);
+    console.log("Error al cargar las personas");
     return;
   }
+
   personas.forEach((persona) => {
-    nombresPersonas.push(persona.nombre.trim().toLowerCase());
+    correosPersonas.push(persona.correo.trim().toLowerCase());
+    telefonosPersonas.push(persona.telefono.trim());
   });
 }
 
-agregarPersona();
+cargarPersonas();
