@@ -27,7 +27,9 @@ async function cargarTalla() {
   }
   inputId.value = talla[0].idtalla;
   inputTalla.value = talla[0].numero;
-  inputDescripcion.value = talla[0].descripcion.trim();
+  inputDescripcion.value = talla[0].descripcion.trim()
+    ? talla[0].descripcion.trim()
+    : "";
 }
 
 cargarTalla();
