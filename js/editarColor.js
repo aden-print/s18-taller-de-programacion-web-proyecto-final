@@ -47,7 +47,7 @@ formularioEditar.addEventListener("submit", async (e) => {
   }
 
   const { error } = await actualizar(
-    "categoria",
+    "color",
     dataActualizar,
     "idcolor",
     idColor
